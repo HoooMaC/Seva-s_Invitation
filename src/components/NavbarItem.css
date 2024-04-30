@@ -1,0 +1,31 @@
+.nav-item {
+    --icon-sz: 24px;
+    width: var(--icon-sz);
+    width: var(--icon-sz);
+}
+
+.nav-item.active {
+    --icon-sz: 48px;
+}
+
+.nav-item.active {
+    width: var(--icon-sz);
+    height: var(--icon-sz);
+    
+    fill: var(--clr-white);
+}
+
+.active-nav-item {
+    --icon-sz: 24px;
+    
+    padding: 8px;
+    background-color: var(--clr-primary);
+    border-radius: 50%;
+}
+
+.active-nav-item .icon {
+    width: var(--icon-sz);
+    height: var(--icon-sz);
+    
+    fill: var(--clr-white);
+}

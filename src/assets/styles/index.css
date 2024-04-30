@@ -1,0 +1,50 @@
+:root {
+    --clr-primary: #6A8D6C;
+    --clr-secondary: #A1B7A2;
+    --clr-tertiary: #D1B58D;
+    --clr-white: #FFFFFF;
+
+    --clr-placehoder-text: #777777;
+
+    --font-heading: 'Century725 Cn BT';
+    --font-paragraph: 'Inter', sans-serif; 
+
+    --pad-sm: 8px;
+    --pad-base: 16px;
+    --pad-lg: 24px;
+    --pad-xl: 32px;
+
+    --gap-sm: 8px;
+    --gap-base: 16px;
+    --gap-lg: 24px;
+    --gap-xl: 32px;
+
+    --icon-sz: 24px;
+
+    --navbar-height: calc(var(--icon-sz) + (var(--pad-base) * 4))
+}
+
+body {
+    max-height: 100dvh;
+    overflow: hidden;
+}
+
+a,
+button {
+    display: inline-block;
+    padding: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+    color: white;
+    text-decoration: none;
+}
+
+@font-face {
+    font-family: 'Century725 Cn BT';
+    src: url('../fonts/cen725c.ttf') format('truetype');
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Century725 Cn BT', sans-serif;
+  }

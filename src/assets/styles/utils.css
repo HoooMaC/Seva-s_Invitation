@@ -1,0 +1,46 @@
+.container {
+    position: relative;
+
+    margin-right: auto;
+    margin-left: auto;
+    width: 360px;
+    height: 100dvh;
+}
+
+.container .col-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: var(--gap-base);
+
+    position: relative;
+    top: 0;
+    bottom: 0;
+
+    width: 100%;
+    height: calc(100% - var(--navbar-height));
+    
+    padding: 1rem;
+    padding-top: 48px;
+    padding-bottom: 32px;
+    
+    /* debug */
+    /* background-color: white; */
+    border: 1px solid red;
+}
+
+.top-left-corner {
+    position: relative;
+    left: 0;
+    top: 0;
+}
+
+.bottom-right-corner {
+    position: relative;
+    right: 0;
+    bottom: 0;
+}
+
+.border-debug {
+    border: 1px solid green;
+}

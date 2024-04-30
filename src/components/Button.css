@@ -1,0 +1,36 @@
+.button {
+    display: flex;
+    padding: 16px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+
+    color: var(--clr-primary);
+    font-weight: 500;
+
+    border-radius: var(--xxs, 8px);
+    border: 1.5px solid var(--clr-primary, #6A8D6C);
+    background: var(--clr-white);
+    box-shadow: 3px 2px 4px 0px rgba(0, 0, 0, 0.50);
+}
+
+.button:hover {
+    border: 1.5px solid var(--primary-secondary, #A1B7A2);
+    background: var(--clr-secondary);
+    
+    color: var(--clr-white);
+}
+
+.button:hover > .icon  {
+    fill: var(--clr-white);
+}
+
+.button:active {
+    background: var(--clr-primary);
+
+    color: var(--clr-white);
+}
+
+.button:active > .icon {
+    fill: var(--clr-white);
+}

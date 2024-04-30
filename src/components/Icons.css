@@ -1,0 +1,11 @@
+.icon {
+    height: var(--icon-sz);
+    width: var(--icon-sz);
+    margin: auto;
+
+    fill: var(--clr-primary);
+}
+
+.icon.active {
+    fill: var(--clr-secondary);
+}
