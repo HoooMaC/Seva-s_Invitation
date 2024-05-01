@@ -3,6 +3,11 @@ import { createBrowserRouter } from "react-router-dom";
 import First from "./pages/First";
 import Letter from "./pages/Letter";
 import Home from "./pages/Home";
+import Couple from "./pages/Couple";
+import Family from "./pages/Family"
+import Date from "./pages/Date"
+
+import MainMenu from "./layouts/MainMenu";
 
 const router = createBrowserRouter([
   {
@@ -16,32 +21,26 @@ const router = createBrowserRouter([
 
   // main section
   {
-    path: "/home",
-    element: <Home />,
-  },
-  {
-    path: "/couple",
-    element: <Home />,
-  },
-  {
-    path: "/family",
-    element: <Home />,
-  },
-  {
-    path: "/date",
-    element: <Home />,
-  },
-  {
-    path: "/gallery",
-    element: <Home />,
-  },
-  {
-    path: "/new-greeting",
-    element: <Home />,
-  },
-  {
-    path: "/greeting-list",
-    element: <Home />,
+    path: "/",
+    element: <MainMenu />,
+    children: [
+      {
+        path: "/home",
+        element: <Home />,
+      },
+      {
+        path: "/couple",
+        element: <Couple />,
+      },
+      {
+        path: "/family",
+        element: <Family />,
+      },
+      {
+        path: "/date",
+        element: <Date />,
+      },
+    ],
   },
 ]);
 

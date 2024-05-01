@@ -9,6 +9,10 @@
     --font-heading: 'Century725 Cn BT';
     --font-paragraph: 'Inter', sans-serif; 
 
+    --radius-s: 8px;
+    --radius-xs: 4px;
+    
+    --shadow-base: 7px 8px 7px 0px rgba(0, 0, 0, 0.25);
     --pad-sm: 8px;
     --pad-base: 16px;
     --pad-lg: 24px;

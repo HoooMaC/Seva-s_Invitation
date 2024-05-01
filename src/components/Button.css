@@ -1,10 +1,13 @@
 .button {
     display: flex;
-    padding: 16px;
+    /* padding: 16px; */
     justify-content: center;
     align-items: center;
     gap: 8px;
-
+    height: 48px;
+    width: 48px;
+    padding-top: auto;
+    padding-bottom: auto;
     color: var(--clr-primary);
     font-weight: 500;
 
@@ -14,6 +17,9 @@
     box-shadow: 3px 2px 4px 0px rgba(0, 0, 0, 0.50);
 }
 
+.button.button-liquid {
+    width: 100%;
+}
 .button:hover {
     border: 1.5px solid var(--primary-secondary, #A1B7A2);
     background: var(--clr-secondary);

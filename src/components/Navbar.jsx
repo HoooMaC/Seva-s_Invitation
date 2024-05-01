@@ -2,9 +2,9 @@ import { useEffect, useRef, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { motion, useAnimationControls } from "framer-motion";
-import Button from "./Button";
 
 import * as Icons from "./Icons";
+import Button from "./Button";
 
 import "./Navbar.css";
 import NavbarIndicatorIcon from "../assets/images/navbar-indicator.svg";
@@ -33,31 +33,7 @@ const navItem = [
     name: "date",
     path: "/date",
     icon: <Icons.CalendarDaysIcon />,
-  },
-  {
-    key: 5,
-    name: "gallery",
-    path: "/gallery",
-    icon: <Icons.PanoramaIcon />,
-  },
-  {
-    key: 6,
-    name: "new greeting",
-    path: "/new-greeting",
-    icon: <Icons.PenToSquareIcon />,
-  },
-  {
-    key: 7,
-    name: "greeting list",
-    path: "/greeting-list",
-    icon: <Icons.ClipboardListIcon />,
-  },
-  // {
-  //   key: 10,
-  //   name: "Pesan",
-  //   path: "/greeting-list",
-  //   icon: <Icons.EnvelopeIcon />,
-  // },
+  }
 ];
 
 const Navbar = () => {
@@ -117,7 +93,7 @@ const Navbar = () => {
           src={NavbarIndicatorIcon}
           alt="indicator"
         />
-        <div className="navbar navbar-left">
+        <div className="navbar">
           {navItem.map((item) => {
             const isActive = location.pathname === item.path;
             if (item.key >= 5) return null;
@@ -129,9 +105,6 @@ const Navbar = () => {
                 animate={{
                   y: isActive ? -40 : 0,
                 }}
-                // exit={{ 
-                //   y: isActive ? -40 : 0,
-                //  }}
                 transition={{
                   delay: 0.1,
                   duration: 0.2, // Specify the duration in seconds

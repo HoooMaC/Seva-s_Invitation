@@ -12,10 +12,6 @@
     z-index: 2;
 }
 
-.navbar-container.right {
-    left: -100%;
-}
-
 .navbar {
     margin: auto 16px;
     position: relative;

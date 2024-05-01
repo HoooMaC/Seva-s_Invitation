@@ -14,19 +14,20 @@
     gap: var(--gap-base);
 
     position: relative;
-    top: 0;
-    bottom: 0;
+    /* top: 0; */
+    /* bottom: 0; */
 
     width: 100%;
-    height: calc(100% - var(--navbar-height));
+    /* height: calc(100% - var(--navbar-height)); */
+    height: 90%;
+    margin: auto 0;
     
     padding: 1rem;
     padding-top: 48px;
-    padding-bottom: 32px;
-    
+    padding-bottom: 48px;
     /* debug */
     /* background-color: white; */
-    border: 1px solid red;
+    /* border: 1px solid red; */
 }
 
 .top-left-corner {
@@ -39,6 +40,15 @@
     position: relative;
     right: 0;
     bottom: 0;
+    align-self: flex-end;
+}
+
+.title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
 }
 
 .border-debug {

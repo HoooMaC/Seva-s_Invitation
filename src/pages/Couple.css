@@ -1,0 +1,17 @@
+.couple-image {
+    position: absolute;
+    width: 100dvw;
+    object-fit: cover;
+    bottom: -10%;
+    padding: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.couple-title {
+    position: absolute;
+    bottom: 25%;
+    left: 50%;
+    transform: translateY(50%);
+    transform: translateX(-50%);
+}
