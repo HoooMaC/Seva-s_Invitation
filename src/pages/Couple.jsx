@@ -1,6 +1,6 @@
 import placeholder from "../assets/images/temp/placeholder1.png"
 import imageTitle from "../assets/images/temp/seva-title.png"
-import Background from "../components/Background"
+
 import "./Couple.css"
 const Couple = () => {
   return (
