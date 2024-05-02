@@ -7,12 +7,16 @@
     --clr-placehoder-text: #777777;
 
     --font-heading: 'Century725 Cn BT';
-    --font-paragraph: 'Inter', sans-serif; 
+    --font-paragraph: 'Inter', sans-serif;
 
+    --radius-xxl: 32px;
+    --radius-base: 16px;
     --radius-s: 8px;
     --radius-xs: 4px;
-    
+
     --shadow-base: 7px 8px 7px 0px rgba(0, 0, 0, 0.25);
+    --shadow-button: 3px 2px 4px 0px rgba(0, 0, 0, 0.50);
+
     --pad-sm: 8px;
     --pad-base: 16px;
     --pad-lg: 24px;
@@ -27,7 +31,11 @@
 
     --navbar-height: calc(var(--icon-sz) + (var(--pad-base) * 4))
 }
-
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 body {
     max-height: 100dvh;
     overflow: hidden;
@@ -49,6 +57,11 @@ button {
     src: url('../fonts/cen725c.ttf') format('truetype');
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: 'Century725 Cn BT', sans-serif;
-  }
+}

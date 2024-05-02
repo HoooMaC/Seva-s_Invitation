@@ -4,8 +4,8 @@ import First from "./pages/First";
 import Letter from "./pages/Letter";
 import Home from "./pages/Home";
 import Couple from "./pages/Couple";
-import Family from "./pages/Family"
-import Date from "./pages/Date"
+import Family from "./pages/Family";
+import Date from "./pages/Date";
 
 import MainMenu from "./layouts/MainMenu";
 
@@ -39,6 +39,7 @@ const router = createBrowserRouter([
       {
         path: "/date",
         element: <Date />,
+       
       },
     ],
   },

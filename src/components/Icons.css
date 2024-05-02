@@ -6,6 +6,12 @@
     fill: var(--clr-primary);
 }
 
+.date-icon {
+    width: 233px;
+    height: 181px;
+    background-color: aqua;
+}
+
 .icon.active {
     fill: var(--clr-secondary);
 }

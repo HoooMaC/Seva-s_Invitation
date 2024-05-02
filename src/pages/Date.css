@@ -1,0 +1,34 @@
+.date-top-navbar {
+    display: flex;
+    width: 326px;
+    justify-content: space-between;
+}
+
+.date-option {
+    display: flex;
+    border-radius: var(--radius-s);
+    /* background-color: red; */
+    box-shadow: var(--shadow-button);
+    overflow: hidden;
+}
+
+.date-option .button {
+    border-radius: unset;
+    border: unset;
+    /* background-color: unset; */
+    /* box-shadow: unset; */
+}
+
+.row {
+    height: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.date-location-wrapper {
+    height: 100%;
+    width: 100%;
+    /* background-color: red; */
+    display: flex;
+    flex-direction: column;
+}

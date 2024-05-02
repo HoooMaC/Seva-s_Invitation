@@ -33,7 +33,7 @@ const navItem = [
     name: "date",
     path: "/date",
     icon: <Icons.CalendarDaysIcon />,
-  }
+  },
 ];
 
 const Navbar = () => {
@@ -41,6 +41,7 @@ const Navbar = () => {
   const buttonRefs = useRef([]);
   const controls = useAnimationControls();
   const isNavItemClick = useRef(false);
+  const [viewportWidth, setViewportWidth] = useState(0);
 
   const handleNavItemClick = (index) => {
     isNavItemClick.current = true;
@@ -56,7 +57,17 @@ const Navbar = () => {
       });
     }
   };
+  useEffect(() => {
+    const handleResize = () => {
+      setViewportWidth(window.innerWidth);
+    };
 
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
   useEffect(() => {
     if (!isNavItemClick.current) {
       // get the active link
@@ -69,17 +80,18 @@ const Navbar = () => {
         // get the position
         const rect = buttonRefs.current[index].getBoundingClientRect();
         // start the animation
+        console.log("animation trigerred");
         controls.start({
           x: `${rect.left - 22}px`,
           transition: {
-            duration: 0.3, // Specify the duration in seconds
-            ease: "easeInOut", // Specify the easing function
+            duration: 0.3,
+            ease: "easeInOut",
           },
         });
       }
     }
     isNavItemClick.current = false;
-  }, [location.pathname]);
+  }, [location.pathname, viewportWidth]);
 
   return (
     <>

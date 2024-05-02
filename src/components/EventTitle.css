@@ -1,0 +1,54 @@
+.decorated-event-title {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+
+.decorated-event-title .line {
+
+    height: 1px;
+    background-color: var(--clr-primary);
+}
+
+
+.left-side,
+.right-side {
+    display: flex;
+    flex-direction: column;
+    height: 32px;
+    justify-content: space-between;
+}
+
+.left-side {
+    align-items: flex-end;
+}
+
+.right-side {
+    align-items: flex-start;
+}
+
+.line.top {
+    width: 32px;
+}
+
+.line.bottom {
+    width: 48px;
+}
+
+.event-title-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.event-title {
+    color: var(--clr-primary);
+    text-align: center;
+    font-family: var(--font-heading);
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+

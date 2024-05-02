@@ -1,16 +1,16 @@
-import MainMenu from '../layouts/MainMenu';
+import TopNavbar from "../components/TopNavbar";
 
-import title from '../assets/images/Seva_Alham.png'
+import "./Home.css";
 
-import './Home.css'
+import title from "../assets/images/Seva_Alham.png";
 
 const Home = () => {
   return (
-    // <MainMenu>
-      <img className='title' src={title} alt="" />
-
-    // {/* </MainMenu> */}
+    <>
+      <TopNavbar />
+      <img className="title" src={title} alt="" />
+    </>
   );
-}
+};
 
 export default Home;

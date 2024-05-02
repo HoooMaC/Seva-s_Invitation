@@ -1,0 +1,53 @@
+.top-navbar {
+    display: flex;
+    justify-content: space-between;
+}
+
+.menu {
+    position: absolute;
+    box-shadow: 0 0 0 100vmax var(--clr-secondary);
+    z-index: 9;
+}
+.menu-button {
+    z-index: 10;
+}
+.menu-container {
+    position: absolute;
+    width: 360px;
+    height: 80svh;
+    left: -16px;  /* Following the value of the padding, now using padding base */
+    
+    padding: var(--pad-base);
+    /* margin-right: 1rem; */
+}
+
+.menu-box  {
+    width: 100%;
+    height: 100%;
+    /* background: linear-gradient(169deg, #FFF 1.08%, #6A8D6C 97.7%); */
+}
+
+.menu-box {
+    display: flex;
+    flex-direction: column;
+    padding: var(--pad-lg);
+    justify-content: center;
+    gap: 24px;
+}
+
+.menu-separator {
+    border: none;
+    height: 2px;
+    border-radius: 50%;
+    background-color: var(--clr-white);
+}
+.menu-section {
+    display:flex;
+    flex-direction: column;
+    background-color: var(--clr-tertiary);
+    padding: var(--pad-base);
+    border-radius: var(--radius-base);
+    align-items: center;
+    gap: 16px;
+    box-shadow: var(--shadow-base);
+}
