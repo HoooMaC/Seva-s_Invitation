@@ -10,24 +10,18 @@
 .container .col-container {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
     gap: var(--gap-base);
 
     position: relative;
-    /* top: 0; */
-    /* bottom: 0; */
-
     width: 100%;
-    /* height: calc(100% - var(--navbar-height)); */
     height: 90%;
     margin: auto 0;
-    
-    padding: 1rem;
+
+    /* padding: 1rem; */
     padding-top: 48px;
     padding-bottom: 48px;
-    /* debug */
-    /* background-color: white; */
-    /* border: 1px solid red; */
+
 }
 
 .top-left-corner {
@@ -48,8 +42,57 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    
+
 }
+
+.scrollable-container {
+    position: relative;
+    overflow: auto;
+    padding-right: 8px;
+    padding-left: 8px;
+    margin-top: -160px;
+    display: flex;
+    flex-direction: column;
+    gap: var(--pad-xl);
+    justify-content: flex-start;
+}
+
+.col-container:has(.scrollable-container) {
+    height: 100vh;
+    /* padding-top: unset !important; */
+    padding-bottom: unset !important;
+}
+
+
+.scrollable-container::-webkit-scrollbar {
+    padding-top: 10rem;
+    width: 6px;
+    position: absolute;
+    height: 10%;
+}
+
+::-webkit-scrollbar-track,
+.scrollable-container::-webkit-scrollbar-track {
+    background-color: var(--clr-background);
+}
+
+::-webkit-scrollbar-thumb,
+.scrollable-container::-webkit-scrollbar-thumb {
+    width: 16px;
+    background-color: var(--clr-secondary);
+    border-radius: 100vw;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    height: 100px;
+    width: 100%;
+    transform: translateX(-50%);
+    background: linear-gradient(180deg, var(--clr-secondary) 0%, rgba(150, 133, 133, 0.00) 94%);
+}
+
 
 .border-debug {
     border: 1px solid green;

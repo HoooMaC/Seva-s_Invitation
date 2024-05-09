@@ -14,5 +14,11 @@
     padding: var(--pad-base);
     top: 0;
     z-index: 999;
+}
 
+.letter-bg  {
+    object-fit: cover;
+    height: 110%;
+    width: 110%;
+    position: absolute;
 }

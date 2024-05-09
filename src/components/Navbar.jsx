@@ -24,12 +24,18 @@ const navItem = [
   },
   {
     key: 3,
+    name: "greetings",
+    path: "/greetings",
+    icon: <Icons.ClipboardListIcon />,
+  },
+  {
+    key: 4,
     name: "family",
     path: "/family",
     icon: <Icons.PeopleRoofIcon />,
   },
   {
-    key: 4,
+    key: 5,
     name: "date",
     path: "/date",
     icon: <Icons.CalendarDaysIcon />,
@@ -74,13 +80,9 @@ const Navbar = () => {
       const index = buttonRefs.current.findIndex((item) => {
         return item.getAttribute("href") === location.pathname;
       });
-      // check if the active link is available
-      console.log(index);
       if (index !== -1) {
         // get the position
         const rect = buttonRefs.current[index].getBoundingClientRect();
-        // start the animation
-        console.log("animation trigerred");
         controls.start({
           x: `${rect.left - 22}px`,
           transition: {
@@ -108,7 +110,6 @@ const Navbar = () => {
         <div className="navbar">
           {navItem.map((item) => {
             const isActive = location.pathname === item.path;
-            if (item.key >= 5) return null;
             return (
               <motion.div
                 initial={{

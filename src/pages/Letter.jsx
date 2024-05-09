@@ -1,7 +1,7 @@
-import {motion} from 'framer-motion'
+import { motion } from "framer-motion";
 
 import Button from "../components/Button";
-import Navbar from "../components/Navbar.jsx";
+import Background from "../components/Background";
 import "./Letter.css";
 import {
   HomeIcon,
@@ -14,34 +14,37 @@ import lettercontent from "../assets/images/letter-content.png";
 
 const Letter = () => {
   return (
-    <div className="container border-debug">
-      <div className="col-container">
-        <Button className={"top-left-corner"} to="/">
-          <ChevronLeftIcon />
-        </Button>
+    <>
+      <Background />
+      <div className="container">
+        <div className="col-container">
+          <Button className={"top-left-corner"} to="/">
+            <ChevronLeftIcon />
+          </Button>
 
-        {/* content here */}
+          {/* content here */}
 
-        <div className="letter border-debug">
-          <img className="letter-bg" src={letterPaperImg} alt="" />
-          <motion.img
-            className="letter-content"
-            src={lettercontent}
-            alt=""
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1 }}
-          />
+          <div className="letter">
+            <img className="letter-bg" src={letterPaperImg} alt="" />
+            <motion.img
+              className="letter-content"
+              src={lettercontent}
+              alt=""
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1 }}
+            />
+          </div>
+
+          {/* content here */}
+
+          <Button className={"bottom-right-corner"} to="/home">
+            <ChevronRightIcon />
+          </Button>
         </div>
-
-        {/* content here */}
-
-        <Button className={"bottom-right-corner"} to="/home">
-          <ChevronRightIcon />
-        </Button>
+        {/* <Navbar></Navbar> */}
       </div>
-      {/* <Navbar></Navbar> */}
-    </div>
+    </>
   );
 };
 

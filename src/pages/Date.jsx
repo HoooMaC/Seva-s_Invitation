@@ -10,7 +10,7 @@ import TopNavbar from "../components/TopNavbar";
 
 import { HeartIcon } from "../components/Icons";
 
-import CoupleRing from "../assets/icons/couple_ring.png";
+import CoupleRing from "../assets/icons/couple_ring.svg";
 
 import { useState } from "react";
 import "./Date.css";

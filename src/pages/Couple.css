@@ -1,6 +1,6 @@
 .couple-image {
     position: absolute;
-    width: 100dvw;
+    width: 100%;
     object-fit: cover;
     bottom: -10%;
     padding: 0;

@@ -6,8 +6,11 @@ import Home from "./pages/Home";
 import Couple from "./pages/Couple";
 import Family from "./pages/Family";
 import Date from "./pages/Date";
+import Greetings from "./pages/Greetings";
 
 import MainMenu from "./layouts/MainMenu";
+import NewGreeting from "./pages/NewGreeting";
+import Experiment from "./pages/Experiment";
 
 const router = createBrowserRouter([
   {
@@ -39,9 +42,20 @@ const router = createBrowserRouter([
       {
         path: "/date",
         element: <Date />,
-       
+      },
+      {
+        path: "/greetings",
+        element: <Greetings />,
       },
     ],
+  },
+  {
+    path: "/new-greeting",
+    element: <NewGreeting />,
+  },
+  {
+    path: "/experiment",
+    element: <Experiment />,
   },
 ]);
 

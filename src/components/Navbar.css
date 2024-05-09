@@ -49,6 +49,6 @@
 }
 
 .active-link svg {
-    fill: white;
+    fill: var(--clr-secondary);
     z-index: 99;
 }

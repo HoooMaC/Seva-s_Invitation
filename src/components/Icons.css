@@ -3,7 +3,7 @@
     width: var(--icon-sz);
     margin: auto;
 
-    fill: var(--clr-primary);
+    fill: var(--clr-secondary);
 }
 
 .date-icon {

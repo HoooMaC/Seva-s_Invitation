@@ -1,8 +1,10 @@
 :root {
-    --clr-primary: #6A8D6C;
-    --clr-secondary: #A1B7A2;
-    --clr-tertiary: #D1B58D;
+    --clr-primary: #FCE0DF;
+    --clr-secondary: #D6A09E;
+    --clr-tertiary: #CE726F;
     --clr-white: #FFFFFF;
+    --clr-background: #F8F4F4;
+    --clr-text: #070505;
 
     --clr-placehoder-text: #777777;
 
@@ -10,6 +12,7 @@
     --font-paragraph: 'Inter', sans-serif;
 
     --radius-xxl: 32px;
+    --radius-lg: 24px;
     --radius-base: 16px;
     --radius-s: 8px;
     --radius-xs: 4px;
@@ -37,7 +40,8 @@
     box-sizing: border-box;
 }
 body {
-    max-height: 100dvh;
+    height: 100dvh;
+    width: 100dvw;
     overflow: hidden;
 }
 

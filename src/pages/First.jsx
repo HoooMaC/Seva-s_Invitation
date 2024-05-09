@@ -1,18 +1,24 @@
-import Button from '../components/Button'
+import Button from "../components/Button";
+import Background from "../components/Background";
 
-import logo from '../assets/images/S_A.png'
+import logo from "../assets/images/S_A.png";
 
-import './First.css'
+import "./First.css";
 
 const First = () => {
   return (
-    <div className="container">
+    <>
+      <Background />
+      <div className="container">
         <div className="col-container welcome-content">
-          <img className='title' src={logo} alt="seva dan alham" />
-          <Button className='button-liquid' to='/letter'>Buka Undangan</Button>
+          <img className="title" src={logo} alt="seva dan alham" />
+          <Button className="button-liquid" to="/letter">
+            Buka Undangan
+          </Button>
         </div>
-    </div>
-  )
-}
+      </div>
+    </>
+  );
+};
 
 export default First;

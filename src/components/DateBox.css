@@ -1,6 +1,6 @@
 .event-date {
     font-family: var(--font-paragraph);
-    color: var(--primary-tertiary, #D1B58D);
+    color: var(--clr-tertiary);
     text-align: center;
     font-size: 18px;
     font-style: italic;

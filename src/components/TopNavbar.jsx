@@ -2,27 +2,35 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 import MenuItem from "./MenuItem";
-import { ChevronLeftIcon, BarsIcon } from "./Icons";
+import { HomeIcon, ChevronLeftIcon, BarsIcon } from "./Icons";
 import Button from "./Button";
 
 import "./TopNavbar.css";
+import { useLocation } from "react-router-dom";
 
-const TopNavbar = ({ children }) => {
+const TopNavbar = ({ className, children }) => {
+  const location = useLocation();
   const [menuOpened, setMenuOpened] = useState(false);
   return (
-    <div className="top-navbar">
-      <Button to="/letter" className="back-button">
-        <ChevronLeftIcon />
-      </Button>
+    <>
+      <div className={`top-navbar ${className ? className : ""}`}>
+        <Button
+          to={location.pathname !== "/home" ? "/home" : "/letter"}
+          className="back-button"
+        >
+          {/* <ChevronLeftIcon /> */}
+          {location.pathname !== "/home" ? <HomeIcon /> : <ChevronLeftIcon />}
+        </Button>
 
-      {children}
+        {children}
 
-      <Button
-        className="menu-button"
-        onClick={() => setMenuOpened(!menuOpened)}
-      >
-        <BarsIcon />
-      </Button>
+        <Button
+          className="menu-button"
+          onClick={() => setMenuOpened(true)}
+        >
+          <BarsIcon />
+        </Button>
+      </div>
       <AnimatePresence>
         {menuOpened ? (
           <motion.div
@@ -33,6 +41,12 @@ const TopNavbar = ({ children }) => {
             transition={{ duration: 0.2, ease: "easeInOut" }}
           >
             <div className="menu-container">
+              <Button
+                className="menu-close-button"
+                onClick={() => setMenuOpened(false)}
+              >
+                <BarsIcon />
+              </Button>
               <div className="menu-box">
                 <div className="menu-section">
                   <MenuItem to="/home">Home</MenuItem>
@@ -40,7 +54,7 @@ const TopNavbar = ({ children }) => {
                   <MenuItem to="/family">Keluarga</MenuItem>
                   <MenuItem to="/date">Tanggal & Lokasi</MenuItem>
                   <MenuItem to="/gallery">Galeri</MenuItem>
-                  <MenuItem to="/greeting-board">Papan Ucapan</MenuItem>
+                  <MenuItem to="/greetings">Papan Ucapan</MenuItem>
                 </div>
                 <hr className="menu-separator" />
                 <div className="menu-section">
@@ -55,7 +69,7 @@ const TopNavbar = ({ children }) => {
           </motion.div>
         ) : null}
       </AnimatePresence>
-    </div>
+    </>
   );
 };
 

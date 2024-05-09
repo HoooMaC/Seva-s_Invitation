@@ -1,20 +1,33 @@
 import TopNavbar from "../components/TopNavbar";
+import ImageContainer from "../components/ImageContainer";
 
 import "./Family.css";
 
-import example from "../assets/images/temp/example_image.png";
+import placehoderImage from "../assets/images/temp/PLACEHOLDER IMAGE.png";
 
 const Family = () => {
   return (
     <>
-      <TopNavbar>
-        {/* Dots for the indicator of the images */}
-      </TopNavbar>
-      <div className="image-container">
-        <img src={example} alt="" className="family-image" />
+      <TopNavbar className="fixed-top"></TopNavbar>
+
+      <div className="board-title-container">
+        <h1 className="board-title">KELUARGA</h1>
       </div>
-      <div className="family-title-container">
-        <h2 className="family-title">Mena Tiara</h2>
+      <div className="section">
+        <div className="scrollable-container">
+          {/* <div className="overlay" /> */}
+          {/* <ImageContainer src={example} title="Mena Tiara" /> */}
+          <ImageContainer src={placehoderImage} title="UNDEFINED" />
+          <ImageContainer src={placehoderImage} title="UNDEFINED" />
+          <ImageContainer src={placehoderImage} title="UNDEFINED" />
+          <ImageContainer src={placehoderImage} title="UNDEFINED" />
+          <ImageContainer src={placehoderImage} title="UNDEFINED" />
+          <ImageContainer src={placehoderImage} title="UNDEFINED" />
+          <ImageContainer src={placehoderImage} title="UNDEFINED" />
+          <ImageContainer src={placehoderImage} title="UNDEFINED" />
+          <ImageContainer src={placehoderImage} title="UNDEFINED" />
+          <ImageContainer src={placehoderImage} title="UNDEFINED" />
+        </div>
       </div>
     </>
   );

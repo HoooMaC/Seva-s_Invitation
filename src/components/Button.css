@@ -8,17 +8,17 @@
     width: 48px;
     padding-top: auto;
     padding-bottom: auto;
-    color: var(--clr-primary);
+    color: var(--clr-tertiary);
     font-weight: 500;
 
     border-radius: var(--xxs, 8px);
-    border: 1.5px solid var(--clr-primary, #6A8D6C);
-    background: var(--clr-white);
+    /* border: 1.5px solid var(--clr-primary, #6A8D6C); */
+    background: var(--clr-primary);
     box-shadow: var(--shadow-button);
 }
 
 .back-button {
-    align-self: flex-start;
+    /* align-self: flex-start; */
 }
 
 .button.button-liquid {
@@ -26,7 +26,6 @@
 }
 
 .button:hover {
-    border: 1.5px solid var(--primary-secondary, #A1B7A2);
     background: var(--clr-secondary);
 
     color: var(--clr-white);
@@ -37,7 +36,7 @@
 }
 
 .button:active {
-    background: var(--clr-primary);
+    background: var(--clr-tertiary);
 
     color: var(--clr-white);
 }
@@ -51,6 +50,7 @@
     color: var(--clr-white);
     border: none;
     width: unset;
+    font-weight: 400;
     padding-right: 16px;
     padding-left: 16px;
 }
@@ -64,4 +64,8 @@
     fill: var(--clr-tertiary);
     transform: scale(2);
     transition: transform 200ms ease-in-out;
+}
+
+.circle-button {
+    border-radius: 50%;
 }

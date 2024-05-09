@@ -1,14 +1,12 @@
 import { RouterProvider } from 'react-router-dom';
 import router from './router.jsx'
-
-import Background from './components/Background';
+import { AnimatePresence } from 'framer-motion';
 
 function App() {
   return ( 
-    <>
-      <Background/>
+    <AnimatePresence wait>
       <RouterProvider router={router} />
-    </>
+    </AnimatePresence>
   );
 }
 

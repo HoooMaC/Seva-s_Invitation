@@ -1,13 +1,36 @@
-import './Background.css';
+import { useLocation } from "react-router-dom";
 
-const Background = ({ blur }) => {
-    
-    return (
-        <>
-            <div className="background image blur"/>
-            <div className="background background-dark" />
-        </>
-    );
+import "./Background.css";
+
+const Background = ({}) => {
+  const location = useLocation();
+  let classes = "background";
+
+  switch (location.pathname) {
+    case "/new-greeting": // cukup putih saja
+      classes += " white";
+      break;
+    case "/letter":
+      classes += " blur";
+    case "/":
+    case "/home":
+    case "/couple":
+    case "/family":
+    case "/date":
+    case "/greetings":
+      classes += " image";
+      break;
+    // Bisa ditambahkan case lain sesuai kebutuhan
+    default:
+    // Eksekusi kode jika expression tidak cocok dengan nilai yang ada
+  }
+
+  return (
+    <>
+      <div className={classes} />
+      {/* <div className="background image blur" /> */}
+    </>
+  );
 };
 
 export default Background;

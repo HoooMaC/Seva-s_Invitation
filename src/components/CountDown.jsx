@@ -5,23 +5,23 @@ const CountDown = () => {
     <div className="countdown-container">
       <div className="countdown-item">
         <div className="countdown-number">01</div>
-        <div className="countdown-unit">Satuan</div>
+        <p className="countdown-unit">Bulan</p>
       </div>
       <div className="countdown-item">
         <div className="countdown-number">01</div>
-        <div className="countdown-unit">Satuan</div>
+        <p className="countdown-unit">Hari</p>
       </div>
       <div className="countdown-item">
         <div className="countdown-number">01</div>
-        <div className="countdown-unit">Satuan</div>
+        <p className="countdown-unit">Jam</p>
       </div>
       <div className="countdown-item">
         <div className="countdown-number">01</div>
-        <div className="countdown-unit">Satuan</div>
+        <p className="countdown-unit">Menit</p>
       </div>
       <div className="countdown-item">
         <div className="countdown-number">01</div>
-        <div className="countdown-unit">Satuan</div>
+        <p className="countdown-unit">Detik</p>
       </div>
     </div>
   );
