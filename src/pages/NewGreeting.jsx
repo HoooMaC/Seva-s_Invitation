@@ -24,8 +24,15 @@ const NewGreeting = () => {
       message: event.target.elements.message.value,
     };
 
-    await axios.get(`${BASE_URL}/sanctum/csrf-cookie`);
-    await axios.post(`${BASE_URL}/api/greetings`, formData);
+    try {
+      await axios.get(`${BASE_URL}/sanctum/csrf-cookie`);
+      const response = await axios.post(`${BASE_URL}/api/greetings`, formData);
+      console.log(response.data);
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  
+    // console.log(response.data);
   };
 
   return (

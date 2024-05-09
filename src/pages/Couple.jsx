@@ -13,7 +13,7 @@ const Couple = () => {
 
   return (
     <>
-      <TopNavbar>
+       <TopNavbar>
         <div className="date-option">
           <Button
             // to="/date/akad"

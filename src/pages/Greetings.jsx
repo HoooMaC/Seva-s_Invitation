@@ -14,6 +14,9 @@ const Greetings = () => {
   const [data, setData] = useState([]);
   const BASE_URL = import.meta.env.VITE_API_BASE_URL;
   const [isLoading, setIsLoading] = useState(true);
+
+
+  
   useEffect(() => {
     const fetchData = async () => {
       try {

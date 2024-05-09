@@ -4,14 +4,14 @@
     justify-content: center;
     align-items: center;
     gap: 8px;
-    height: 48px;
-    width: 48px;
+    height: 40px;
+    width: 40px;
     padding-top: auto;
     padding-bottom: auto;
     color: var(--clr-tertiary);
     font-weight: 500;
 
-    border-radius: var(--xxs, 8px);
+    border-radius: var(--radius-s);
     /* border: 1.5px solid var(--clr-primary, #6A8D6C); */
     background: var(--clr-primary);
     box-shadow: var(--shadow-button);
@@ -62,7 +62,7 @@
 
 .top-navbar-button.active > .icon {
     fill: var(--clr-tertiary);
-    transform: scale(2);
+    transform: scale(1.2);
     transition: transform 200ms ease-in-out;
 }
 

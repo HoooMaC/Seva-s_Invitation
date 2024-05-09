@@ -1,7 +1,7 @@
 .greeting-card {
     background-color: white;
     padding: var(--pad-base);
-    border-radius: var(--pad-lg);
+    border-radius: var(--radius-s);
     box-shadow: var(--shadow-base);
 
     display: flex;

@@ -24,10 +24,7 @@ const TopNavbar = ({ className, children }) => {
 
         {children}
 
-        <Button
-          className="menu-button"
-          onClick={() => setMenuOpened(true)}
-        >
+        <Button className="menu-button" onClick={() => setMenuOpened(true)}>
           <BarsIcon />
         </Button>
       </div>
@@ -40,13 +37,13 @@ const TopNavbar = ({ className, children }) => {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2, ease: "easeInOut" }}
           >
+            <Button
+              className="menu-close-button"
+              onClick={() => setMenuOpened(false)}
+            >
+              <BarsIcon />
+            </Button>
             <div className="menu-container">
-              <Button
-                className="menu-close-button"
-                onClick={() => setMenuOpened(false)}
-              >
-                <BarsIcon />
-              </Button>
               <div className="menu-box">
                 <div className="menu-section">
                   <MenuItem to="/home">Home</MenuItem>

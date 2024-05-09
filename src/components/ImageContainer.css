@@ -1,12 +1,13 @@
 .image-container {
     width: 100%;
-    min-height: 500px;
+    min-height: 400px;
     overflow: hidden;
     display: flex;
     flex-direction: column;
     /* justify-content: center; */
     /* gap: var(--gap-base); */
-    border-radius: var(--radius-base);
+    border-radius: var(--radius-s);
+    box-shadow: 3px 2px 4px 0px rgba(0, 0, 0, 0.25);
     align-items: flex-end;
 }
 .family-image-wrapper {

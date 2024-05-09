@@ -1,7 +1,4 @@
-import {
-  motion,
-  AnimatePresence,
-} from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 import Button from "../components/Button";
 import LocationBox from "../components/LocationBox";
@@ -34,7 +31,7 @@ const Date = () => {
   };
   return (
     <>
-        <TopNavbar>
+      <TopNavbar>
         <div className="date-option">
           <Button
             // to="/date/akad"
@@ -51,7 +48,7 @@ const Date = () => {
             <HeartIcon />
           </Button>
         </div>
-        </TopNavbar>
+      </TopNavbar>
       <AnimatePresence>
         <div className="row">
           {akadPage && (

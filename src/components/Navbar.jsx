@@ -84,7 +84,7 @@ const Navbar = () => {
         // get the position
         const rect = buttonRefs.current[index].getBoundingClientRect();
         controls.start({
-          x: `${rect.left - 22}px`,
+          x: `${rect.left - 24}px`,
           transition: {
             duration: 0.3,
             ease: "easeInOut",
@@ -98,12 +98,12 @@ const Navbar = () => {
   return (
     <>
       <div
-        className={`navbar-container fixed-bottom`} //add class left is current navbar is left
+        className={`navbar-container`} 
       >
         <motion.img
           initial={{ x: 0 }}
           animate={controls}
-          style={{ position: "fixed", bottom: "58px", zIndex: -2 }}
+          style={{ position: "fixed", bottom: "30px", zIndex: -2 }}
           src={NavbarIndicatorIcon}
           alt="indicator"
         />
@@ -116,7 +116,7 @@ const Navbar = () => {
                   y: 0,
                 }}
                 animate={{
-                  y: isActive ? -40 : 0,
+                  y: isActive ? -27 : 0,
                 }}
                 transition={{
                   delay: 0.1,
