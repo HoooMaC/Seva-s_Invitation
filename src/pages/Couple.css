@@ -12,7 +12,7 @@
     position: absolute;
     bottom: 25%;
     left: 50%;
-    transform: translateY(50%);
+    /*transform: translateY(50%);*/
     transform: translateX(-50%);
     max-width: 100%;
 }

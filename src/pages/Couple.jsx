@@ -11,9 +11,10 @@ import "./Couple.css";
 const Couple = () => {
   const [groom, setGroom] = useState(true);
 
+
   return (
     <>
-       <TopNavbar>
+      <TopNavbar>
         <div className="date-option">
           <Button
             // to="/date/akad"

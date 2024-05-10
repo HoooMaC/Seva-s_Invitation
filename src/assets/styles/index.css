@@ -6,6 +6,9 @@
     --clr-background: #F8F4F4;
     --clr-text: #070505;
 
+    --clr-success: #16E816;
+    --clr-error: #FF224A;
+
     --clr-placehoder-text: #777777;
 
     --font-heading: 'Century725 Cn BT';
@@ -34,11 +37,13 @@
 
     --navbar-height: calc(var(--icon-sz) + (var(--pad-base) * 4))
 }
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
 body {
     height: 100dvh;
     width: 100dvw;
