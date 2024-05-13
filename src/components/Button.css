@@ -23,6 +23,7 @@
 
 .button.button-liquid {
     width: 100%;
+    min-height: 32px;
 }
 
 .button:hover {
@@ -31,7 +32,7 @@
     color: var(--clr-white);
 }
 
-.button:hover>.icon {
+.button:hover > .icon {
     fill: var(--clr-white);
 }
 
@@ -41,7 +42,7 @@
     color: var(--clr-white);
 }
 
-.button:active>.icon {
+.button:active > .icon {
     fill: var(--clr-white);
 }
 
@@ -55,9 +56,11 @@
     padding-left: 16px;
 }
 
-.button.button-secondary:hover {}
+.button.button-secondary:hover {
+}
 
-.button-button-secodary:active {}
+.button-button-secodary:active {
+}
 
 
 .top-navbar-button.active > .icon {

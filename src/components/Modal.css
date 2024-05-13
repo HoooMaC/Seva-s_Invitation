@@ -1,0 +1,118 @@
+
+.background.modal-background {
+    background-color: rgba(0, 0, 0, 0.5);
+    /*filter: blur(5px);*/
+    z-index: 11;
+}
+
+.modal-success {
+    position: relative;
+    display: inline-block;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: var(--pad-xl);
+    border-radius: var(--radius-base);
+    z-index: 12;
+
+    background-color: var(--clr-white);
+}
+
+.modal-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: var(--gap-lg);
+
+}
+
+.modal-title {
+    font-family: 'Inter', sans-serif;
+    width: 100%;
+    text-align: center;
+    color: var(--clr-success);
+}
+
+.modal-message {
+    color: var(--clr-text);
+}
+
+.modal-button {
+    width: unset;
+    height: unset;
+    color: var(--clr-white);
+    background-color: var(--clr-success);
+    padding: var(--pad-base);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-button:active,
+.modal-button:hover {
+    color: var(--clr-white);
+    background-color: var(--clr-success);
+}
+
+/* Modal Preview Image Section */
+.modal-close-button {
+    position: absolute;
+    border-radius: 50%;
+    right: 8px;
+    top: 8px;
+    background: none;
+    box-shadow: none;
+}
+
+.modal-close-button:hover,
+.modal-close-button:active {
+    background: none;
+    box-shadow: none;
+}
+
+.modal-close-button > svg {
+    fill: var(--clr-white);
+}
+
+.modal-preview {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr auto;
+    grid-column-gap: 8px;
+    grid-row-gap: 8px;
+}
+
+.modal-image {
+    width: 250px;
+    min-height: 250px;
+    grid-area: 1 / 1 / 2 / 3;
+    overflow: hidden;
+}
+
+.modal-image-preview {
+    width: 100%;
+    height: 100%;
+    object-position: center center;
+    object-fit: cover;
+
+}
+
+.button.change-modal-button,
+.button.delete-modal-button {
+    border-radius: 0;
+    color: white;
+    font-weight: 300;
+    width: 100%;
+}
+
+.button.delete-modal-button {
+    grid-area: 2 / 1 / 3 / 2;
+    background-color: #6A8D3C;
+}
+
+.button.change-modal-button {
+    grid-area: 2 / 2 / 3 / 3;
+    background-color: #6A2D3C;
+}

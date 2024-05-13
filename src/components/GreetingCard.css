@@ -15,6 +15,13 @@
     height: 32px;
     background-color: #cccccc;
     border-radius: 50%;
+    overflow: hidden;
+}
+
+.greeting-card-writter-icon {
+    max-width: 32px;
+    object-fit: cover;
+    object-position: center center;
 }
 
 .greeting-card-section {
@@ -24,7 +31,7 @@
 .greeting-card-section.header {
     display: flex;
     justify-content: flex-start;
-    
+
     gap: 16px;
 }
 
@@ -40,13 +47,14 @@
 
 .greeting-card-writter-relation {
     color: var(--clr-secondary);
-font-family: Inter;
-font-size: 10px;
-font-style: normal;
-font-weight: 500;
-line-height: normal;
+    font-family: Inter;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
 
 }
+
 .greeting-card-content {
     color: var(--clr-text);
     font-family: Inter;
@@ -61,6 +69,7 @@ line-height: normal;
     flex-direction: column;
     gap: 8px;
 }
+
 .line-decoration {
     height: 1.5px;
     margin: 0 auto;
@@ -70,8 +79,9 @@ line-height: normal;
 
 .line-decoration.top {
     width: 60%;
-    
+
 }
+
 .line-decoration.bottom {
     width: 40%;
 

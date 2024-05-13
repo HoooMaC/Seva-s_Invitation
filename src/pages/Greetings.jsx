@@ -16,12 +16,12 @@ const Greetings = () => {
   const [isLoading, setIsLoading] = useState(true);
 
 
-  
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await axios.get(`${BASE_URL}/api/greetings`);
-        setData(response.data.data);
+        setData(response.data);
+        console.log(response.data);
       } catch (error) {
         console.error("Error fetching data:", error);
       } finally {
@@ -31,6 +31,38 @@ const Greetings = () => {
     fetchData();
   }, []);
 
+  const RenderData = () => {
+    // Periksa apakah data.data.map valid
+    if (data.data && Array.isArray(data.data)) {
+      return data.data.map(({ id, attributes }, index) => (
+        <GreetingCard
+          key={id}
+          name={attributes.name}
+          relation={attributes.relation}
+          icon={attributes.icon}
+        >
+          {attributes.message}
+        </GreetingCard>
+      ));
+    }
+
+    // Periksa apakah data.map valid
+    if (data && Array.isArray(data)) {
+      return data.map(({ id, attributes }, index) => (
+        <GreetingCard
+          key={id}
+          name={attributes.name}
+          relation={attributes.relation}
+          icon={attributes.icon}
+        >
+          {attributes.message}
+        </GreetingCard>
+      ));
+    }
+
+    // Jika kedua properti tidak valid, kembalikan null atau tampilkan pesan kesalahan
+    return null;
+  };
   return (
     <>
       <TopNavbar className="fixed-top"></TopNavbar>
@@ -39,34 +71,25 @@ const Greetings = () => {
       </div>
 
       {isLoading ? (
-          <motion.div
-            className="loading-box"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-          >
-            <BeatLoader
-              color="#D6A09E"
-              loading={isLoading}
-              // cssOverride={override}
-              size={20}
-              aria-label="Loading Spinner"
-              data-testid="loader"
-            />
-          </motion.div>
+        <motion.div
+          className="loading-box"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+        >
+          <BeatLoader
+            color="#D6A09E"
+            loading={isLoading}
+            // cssOverride={override}
+            size={20}
+            aria-label="Loading Spinner"
+            data-testid="loader"
+          />
+        </motion.div>
       ) : (
         <div className="section">
           <div className="scrollable-container">
-            {data.map(({ id, attributes }, index) => (
-              <GreetingCard
-                key={id}
-                name={attributes.name}
-                relation={attributes.relation}
-              >
-                {attributes.message}
-              </GreetingCard>
-            ))}
-
+            <RenderData />
             <div style={{ width: "100%", minHeight: "10vh" }}></div>
           </div>
           {/* Need to check if the user hasn't write any greeting letter yet */}
