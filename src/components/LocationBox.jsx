@@ -1,5 +1,5 @@
 import Button from "./Button";
-import "./LocationBox.css"
+import "./LocationBox.css";
 
 const LocationBox = ({ place, address, href }) => {
   return (

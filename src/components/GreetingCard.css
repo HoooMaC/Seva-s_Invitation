@@ -1,88 +1,84 @@
 .greeting-card {
-    background-color: white;
-    padding: var(--pad-base);
-    border-radius: var(--radius-s);
-    box-shadow: var(--shadow-base);
+  background-color: white;
+  padding: var(--pad-base);
+  border-radius: var(--radius-s);
+  box-shadow: var(--shadow-base);
 
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .greeting-card-profile {
-    min-width: 32px;
-    height: 32px;
-    background-color: #cccccc;
-    border-radius: 50%;
-    overflow: hidden;
+  min-width: 32px;
+  height: 32px;
+  background-color: #cccccc;
+  border-radius: 50%;
+  overflow: hidden;
 }
 
 .greeting-card-writter-icon {
-    max-width: 32px;
-    object-fit: cover;
-    object-position: center center;
+  max-width: 32px;
+  object-fit: cover;
+  object-position: center center;
 }
 
 .greeting-card-section {
-    /* background-color: aqua */
+  /* background-color: aqua */
 }
 
 .greeting-card-section.header {
-    display: flex;
-    justify-content: flex-start;
+  display: flex;
+  justify-content: flex-start;
 
-    gap: 16px;
+  gap: 16px;
 }
 
 .greeting-card-writter {
-    color: var(--clr-text);
-    text-align: start;
-    font-family: Inter;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: normal;
+  color: var(--clr-text);
+  text-align: start;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
 }
 
 .greeting-card-writter-relation {
-    color: var(--clr-secondary);
-    font-family: Inter;
-    font-size: 10px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-
+  color: var(--clr-secondary);
+  font-family: Inter;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
 }
 
 .greeting-card-content {
-    color: var(--clr-text);
-    font-family: Inter;
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
+  color: var(--clr-text);
+  font-family: Inter;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
 
 .greeting-card-section.footer {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .line-decoration {
-    height: 1.5px;
-    margin: 0 auto;
-    background-color: var(--clr-tertiary);
-    border-radius: 50%;
+  height: 1.5px;
+  margin: 0 auto;
+  background-color: var(--clr-tertiary);
+  border-radius: 50%;
 }
 
 .line-decoration.top {
-    width: 60%;
-
+  width: 60%;
 }
 
 .line-decoration.bottom {
-    width: 40%;
-
+  width: 40%;
 }

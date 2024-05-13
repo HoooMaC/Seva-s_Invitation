@@ -1,17 +1,17 @@
 .menu-item {
-    color: var(--clr-white);
-    font-weight: 600;
-    text-shadow: 4px 3px 6px rgba(0, 0, 0, 0.3);
-    letter-spacing: 1px;
+  color: var(--clr-white);
+  font-weight: 600;
+  text-shadow: 4px 3px 6px rgba(0, 0, 0, 0.3);
+  letter-spacing: 1px;
 }
 
 .menu-item:hover {
-    color: var(--clr-secondary);
-    text-shadow: 4px 3px 6px rgba(0, 0, 0, 0.1);
+  color: var(--clr-secondary);
+  text-shadow: 4px 3px 6px rgba(0, 0, 0, 0.1);
 }
 
 .menu-item.active,
 .menu-item:active {
-    color: var(--clr-primary);
-    text-shadow: 4px 3px 6px rgba(0, 0, 0, 0.1);
+  color: var(--clr-primary);
+  text-shadow: 4px 3px 6px rgba(0, 0, 0, 0.1);
 }

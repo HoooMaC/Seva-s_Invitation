@@ -1,9 +1,8 @@
 .family-section {
-    display: flex;
-    flex-direction: column;
-    /* height: 100%; */
-    flex-grow: 10;
-    overflow: visible;
-    gap:var(--gap-lg);
+  display: flex;
+  flex-direction: column;
+  /* height: 100%; */
+  flex-grow: 10;
+  overflow: visible;
+  gap: var(--gap-lg);
 }
-

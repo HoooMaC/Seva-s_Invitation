@@ -11,7 +11,6 @@ import "./Couple.css";
 const Couple = () => {
   const [groom, setGroom] = useState(true);
 
-
   return (
     <>
       <TopNavbar>

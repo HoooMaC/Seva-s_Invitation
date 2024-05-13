@@ -49,7 +49,7 @@ const Navbar = () => {
   const isNavItemClick = useRef(false);
   const [viewportWidth, setViewportWidth] = useState(0);
 
-  const handleNavItemClick = (index) => {
+  const handleNavItemClick = index => {
     isNavItemClick.current = true;
     const element = buttonRefs.current[index];
     if (element) {
@@ -77,7 +77,7 @@ const Navbar = () => {
   useEffect(() => {
     if (!isNavItemClick.current) {
       // get the active link
-      const index = buttonRefs.current.findIndex((item) => {
+      const index = buttonRefs.current.findIndex(item => {
         return item.getAttribute("href") === location.pathname;
       });
       if (index !== -1) {
@@ -97,9 +97,7 @@ const Navbar = () => {
 
   return (
     <>
-      <div
-        className={`navbar-container`} 
-      >
+      <div className={`navbar-container`}>
         <motion.img
           initial={{ x: 0 }}
           animate={controls}
@@ -108,7 +106,7 @@ const Navbar = () => {
           alt="indicator"
         />
         <div className="navbar">
-          {navItem.map((item) => {
+          {navItem.map(item => {
             const isActive = location.pathname === item.path;
             return (
               <motion.div
@@ -129,7 +127,7 @@ const Navbar = () => {
                 <Link
                   className={`${isActive ? "active-link" : ""} `}
                   to={item.path}
-                  ref={(el) => (buttonRefs.current[item.key - 1] = el)}
+                  ref={el => (buttonRefs.current[item.key - 1] = el)}
                   onClick={() => handleNavItemClick(item.key - 1)}
                 >
                   {item.icon}

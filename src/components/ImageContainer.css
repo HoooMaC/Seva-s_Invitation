@@ -1,41 +1,40 @@
 .image-container {
-    width: 100%;
-    min-height: 400px;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    /* justify-content: center; */
-    /* gap: var(--gap-base); */
-    border-radius: var(--radius-s);
-    box-shadow: 3px 2px 4px 0px rgba(0, 0, 0, 0.25);
-    align-items: flex-end;
+  width: 100%;
+  min-height: 400px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  /* gap: var(--gap-base); */
+  border-radius: var(--radius-s);
+  box-shadow: 3px 2px 4px 0px rgba(0, 0, 0, 0.25);
+  align-items: flex-end;
 }
 .family-image-wrapper {
-    background-color: white; /* don't care*/
-    flex-grow: 1;
-    width: 100%;
+  background-color: white; /* don't care*/
+  flex-grow: 1;
+  width: 100%;
 }
 .family-title-wrapper {
-    box-shadow: 7px 8px 6.9px 0px rgba(0, 0, 0, 0.25);
-    width: 100%;
-    flex-basis: 10%;
-    background-color: var(--clr-tertiary);
-    padding: 16px 0;
+  box-shadow: 7px 8px 6.9px 0px rgba(0, 0, 0, 0.25);
+  width: 100%;
+  flex-basis: 10%;
+  background-color: var(--clr-tertiary);
+  padding: 16px 0;
 }
 .family-image {
-    object-fit: cover;
-    object-position: center center;
+  object-fit: cover;
+  object-position: center center;
 }
 
-
 .family-title {
-    background-color: var(--clr-tertiary);
-    font-size: 32px;
-    color: var(--clr-white);
-    font-weight: 400;
-    line-height: normal;
-    font-style: normal;
-    text-align: center;
-    /* text-shadow: var(--shadow-base); */
-    text-shadow: 7px 8px 7px rgba(0, 0, 0, 0.25);
+  background-color: var(--clr-tertiary);
+  font-size: 32px;
+  color: var(--clr-white);
+  font-weight: 400;
+  line-height: normal;
+  font-style: normal;
+  text-align: center;
+  /* text-shadow: var(--shadow-base); */
+  text-shadow: 7px 8px 7px rgba(0, 0, 0, 0.25);
 }

@@ -1,4 +1,4 @@
-import "./CountDown.css"
+import "./CountDown.css";
 
 const CountDown = () => {
   return (

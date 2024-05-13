@@ -3,7 +3,7 @@ import CountDown from "../components/CountDown";
 import CoupleRing from "../assets/icons/couple_ring.png";
 import "./DateBox.css";
 
-const DateBox = ({event, icon, date}) => {
+const DateBox = ({ event, icon, date }) => {
   return (
     <div className="date-box">
       <img src={icon} alt="" />

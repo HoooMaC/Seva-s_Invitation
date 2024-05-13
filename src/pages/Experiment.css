@@ -1,25 +1,25 @@
 .box {
-    width: 100dvw; /* Set the width of the container */
-    height: 100dvh; /* Set the height of the container */
-    border: 1px solid #ccc; /* Optional: Add border for visualization */
-    /* background-color: blue; */
-    background: linear-gradient(169deg, #FFF 1.08%, #6A8D6C 97.7%);
+  width: 100dvw; /* Set the width of the container */
+  height: 100dvh; /* Set the height of the container */
+  border: 1px solid #ccc; /* Optional: Add border for visualization */
+  /* background-color: blue; */
+  background: linear-gradient(169deg, #fff 1.08%, #6a8d6c 97.7%);
 
-    /* overflow: hidden; Ensure the image does not overflow the container */
+  /* overflow: hidden; Ensure the image does not overflow the container */
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
 
-    position: relative;
-    pointer-events: none; /* Allow mouse events to pass through */
-    z-index: -1;
+  position: relative;
+  pointer-events: none; /* Allow mouse events to pass through */
+  z-index: -1;
 }
-.image-frame    {
-    border: 10px solid #976800;
-    position: fixed;
-    align-self: flex-start;
-    top: -20%;
-    z-index: 9999999;
+.image-frame {
+  border: 10px solid #976800;
+  position: fixed;
+  align-self: flex-start;
+  top: -20%;
+  z-index: 9999999;
 }

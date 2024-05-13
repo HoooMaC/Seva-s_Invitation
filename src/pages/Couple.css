@@ -1,18 +1,18 @@
 .couple-image {
-    position: absolute;
-    width: 100%;
-    object-fit: cover;
-    bottom: -10%;
-    padding: 0;
-    left: 50%;
-    transform: translateX(-50%);
+  position: absolute;
+  width: 100%;
+  object-fit: cover;
+  bottom: -10%;
+  padding: 0;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .couple-title {
-    position: absolute;
-    bottom: 25%;
-    left: 50%;
-    /*transform: translateY(50%);*/
-    transform: translateX(-50%);
-    max-width: 100%;
+  position: absolute;
+  bottom: 25%;
+  left: 50%;
+  /*transform: translateY(50%);*/
+  transform: translateX(-50%);
+  max-width: 100%;
 }

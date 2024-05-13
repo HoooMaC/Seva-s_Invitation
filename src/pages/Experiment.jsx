@@ -41,13 +41,13 @@ const ImageFrame = ({ id, src, alt, top, left, bottom, right }) => {
 const Experiment = () => {
   useEffect(() => {
     const transformComponent = document.querySelector(
-      ".react-transform-component"
+      ".react-transform-component",
     );
     const imageContent = document.querySelector(".image-content");
-    transformComponent.addEventListener("click", (e) => {
+    transformComponent.addEventListener("click", e => {
       console.log(e);
     });
-    transformComponent.addEventListener("click", (e) => {
+    transformComponent.addEventListener("click", e => {
       console.log("Transform");
     });
     // imageContent.addEventListener('click', e => {console.log("image component")});
@@ -60,7 +60,7 @@ const Experiment = () => {
             Zoom to element 1
           </button>
           <TransformComponent
-            onClick={(e) => console.log(e)}
+            onClick={e => console.log(e)}
             style={{ zIndex: -2 }}
           >
             <div className="box">

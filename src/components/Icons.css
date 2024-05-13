@@ -1,17 +1,17 @@
 .icon {
-    height: var(--icon-sz);
-    width: var(--icon-sz);
-    margin: auto;
+  height: var(--icon-sz);
+  width: var(--icon-sz);
+  margin: auto;
 
-    fill: var(--clr-secondary);
+  fill: var(--clr-secondary);
 }
 
 .date-icon {
-    width: 233px;
-    height: 181px;
-    background-color: aqua;
+  width: 233px;
+  height: 181px;
+  background-color: aqua;
 }
 
 .icon.active {
-    fill: var(--clr-secondary);
+  fill: var(--clr-secondary);
 }
