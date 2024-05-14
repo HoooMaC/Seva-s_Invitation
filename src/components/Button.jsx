@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 
 import "./Button.css";
 
-const Button = ({ className, to, onClick, children }) => {
+const Button = ({ className, to, onClick, disabled, children }) => {
   const classes = `button ${className || ""}`;
 
   const renderLink = () => {
@@ -15,7 +15,7 @@ const Button = ({ className, to, onClick, children }) => {
 
   const renderButton = () => {
     return (
-      <button className={classes} onClick={onClick}>
+      <button disabled={disabled} className={classes} onClick={onClick}>
         {children}
       </button>
     );

@@ -7,6 +7,7 @@ import {
   faArrowsRotate,
   faCircleCheck,
   faCircleXmark,
+  faClipboardList,
   faTrashCan,
 } from "@fortawesome/free-solid-svg-icons";
 
@@ -57,18 +58,16 @@ export const ModalImagePreview = ({
   );
 };
 
-export const ModalSuccess = ({ title, message, buttonIcon, buttonMessage }) => {
+export const ModalSuccess = ({ title, message, buttonMessage }) => {
   return (
     <ModalTemplate>
-      <FontAwesomeIcon icon={faCircleCheck} color="#fff" size="lg" />
+      <FontAwesomeIcon icon={faCircleCheck} color="#16e816" size="6x" />
       <div>
         <h3 className="modal-title">{title}</h3>
         <p className="modal-message">{message}</p>
       </div>
       <Button to="/greetings" className="modal-button">
-        {buttonIcon && (
-          <FontAwesomeIcon icon={buttonIcon} color="#fff" size="lg" />
-        )}
+        <FontAwesomeIcon icon={faClipboardList} color="#fff" size="lg" />
         {buttonMessage}
       </Button>
     </ModalTemplate>

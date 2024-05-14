@@ -9,11 +9,14 @@ import TopNavbar from "../components/TopNavbar";
 import GreetingCard from "../components/GreetingCard";
 
 import "./Greetings.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTriangleExclamation } from "@fortawesome/free-solid-svg-icons";
 
 const Greetings = () => {
   const [data, setData] = useState([]);
   const BASE_URL = import.meta.env.VITE_API_BASE_URL;
   const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -22,6 +25,7 @@ const Greetings = () => {
         setData(response.data);
         console.log(response.data);
       } catch (error) {
+        setError(true);
         console.error("Error fetching data:", error);
       } finally {
         setIsLoading(false);
@@ -68,8 +72,17 @@ const Greetings = () => {
       <div className="board-title-container">
         <h1 className="board-title">PAPAN PESAN</h1>
       </div>
-
-      {isLoading ? (
+      {error ? (
+        <div className="error-box">
+          <FontAwesomeIcon
+            icon={faTriangleExclamation}
+            color="#ff224a"
+            size="6x"
+          />
+          <h3 className="error-header">Something went wrong</h3>
+          <p>Please try again later</p>
+        </div>
+      ) : isLoading ? (
         <motion.div
           className="loading-box"
           initial={{ opacity: 0 }}

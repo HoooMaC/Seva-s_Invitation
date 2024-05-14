@@ -1,54 +1,65 @@
 .section {
-  display: flex;
-  flex-direction: column;
-  overflow: auto;
-  margin-top: -48px;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    margin-top: -48px;
 }
+
+.error-box,
 .loading-box {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-top: -48px;
-  flex-basis: 70%;
-  gap: 8px;
-  /* background-color: rgba(255, 255, 255, 0.5); */
-  /* filter: blur(20px); */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: -48px;
+    flex-basis: 70%;
+    gap: 8px;
+}
+
+.error-box > * {
+    color: var(--clr-error);
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.error-header {
+    font-family: Inter, sans-serif;
 }
 
 .board-title-container {
-  /* margin-top: 32px; */
-  display: flex;
-  padding: 8px 0px;
-  z-index: 2;
+    /* margin-top: 32px; */
+    display: flex;
+    padding: 8px 0px;
+    z-index: 2;
 
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  flex-direction: column;
-  border-radius: var(--radius-s);
-  background-color: var(--clr-primary);
-  /* border: 2px solid var(--clr-white); */
-  box-shadow: var(--shadow-base);
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    flex-direction: column;
+    border-radius: var(--radius-s);
+    background-color: var(--clr-primary);
+    /* border: 2px solid var(--clr-white); */
+    box-shadow: var(--shadow-base);
 }
 
 .board-title {
-  color: var(--clr-tertiary);
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 500;
-  letter-spacing: 8px;
-  line-height: normal;
+    color: var(--clr-tertiary);
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    letter-spacing: 8px;
+    line-height: normal;
 }
+
 .section > .scrollable-container {
-  margin-top: -8px;
-  padding-top: 56px;
-  padding-bottom: 100px;
+    margin-top: -8px;
+    padding-top: 56px;
+    padding-bottom: 100px;
 }
+
 .new-greeting-button {
-  position: fixed;
-  bottom: clamp(30px, 50px, 80px);
-  align-self: flex-end;
-  transform: translateY(-100%);
-  /* transform: ; */
+    position: fixed;
+    bottom: clamp(30px, 50px, 80px);
+    align-self: flex-end;
+    transform: translateY(-100%);
+    /* transform: ; */
 }
