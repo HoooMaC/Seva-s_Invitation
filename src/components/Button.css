@@ -1,59 +1,57 @@
 .button {
-  display: flex;
-  /* padding: 16px; */
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-  height: 40px;
-  width: 40px;
-  padding-top: auto;
-  padding-bottom: auto;
-  color: var(--clr-tertiary);
-  font-weight: 500;
+    display: flex;
+    /* padding: 16px; */
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    min-height: 40px;
+    width: 40px;
+    color: var(--clr-tertiary);
+    font-weight: 500;
 
-  border-radius: var(--radius-s);
-  /* border: 1.5px solid var(--clr-primary, #6A8D6C); */
-  background: var(--clr-primary);
-  box-shadow: var(--shadow-button);
+    border-radius: var(--radius-s);
+    /* border: 1.5px solid var(--clr-primary, #6A8D6C); */
+    background: var(--clr-primary);
+    box-shadow: var(--shadow-button);
 }
 
 .back-button {
-  /* align-self: flex-start; */
+    /* align-self: flex-start; */
 }
 
 .button.button-liquid {
-  width: 100%;
-  min-height: 32px;
+    width: 100%;
+    min-height: 32px;
 }
 
 .button:hover {
-  background: var(--clr-secondary);
+    background: var(--clr-secondary);
 
-  color: var(--clr-white);
+    color: var(--clr-white);
 }
 
 .button:hover > .icon {
-  fill: var(--clr-white);
+    fill: var(--clr-white);
 }
 
 .button:active {
-  background: var(--clr-tertiary);
+    background: var(--clr-tertiary);
 
-  color: var(--clr-white);
+    color: var(--clr-white);
 }
 
 .button:active > .icon {
-  fill: var(--clr-white);
+    fill: var(--clr-white);
 }
 
 .button.button-secondary {
-  background: var(--clr-tertiary);
-  color: var(--clr-white);
-  border: none;
-  width: unset;
-  font-weight: 400;
-  padding-right: 16px;
-  padding-left: 16px;
+    background: var(--clr-tertiary);
+    color: var(--clr-white);
+    border: none;
+    width: unset;
+    font-weight: 400;
+    padding-right: 16px;
+    padding-left: 16px;
 }
 
 .button.button-secondary:hover {
@@ -63,11 +61,16 @@
 }
 
 .top-navbar-button.active > .icon {
-  fill: var(--clr-tertiary);
-  transform: scale(1.2);
-  transition: transform 200ms ease-in-out;
+    fill: var(--clr-tertiary);
+    transform: scale(1.2);
+    transition: transform 200ms ease-in-out;
 }
 
 .circle-button {
-  border-radius: 50%;
+    border-radius: 50%;
 }
+
+
+
+
+

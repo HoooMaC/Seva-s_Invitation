@@ -27,6 +27,7 @@
 
     padding-top: 16px;
     padding-bottom: 48px;
+    /*overflow-y: hidden;*/
 }
 
 /*.container .col-container:has(form) {*/
