@@ -9,6 +9,26 @@
     overflow: hidden;
 }
 
+.family-card {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: fit-content;
+    padding: 2rem;
+    background-color: var(--clr-background);
+}
+
+.family-card > .family-image {
+    max-width: 100%;
+}
+
+.family-card > .family-name {
+    margin-top: 16px;
+}
+
+
 .carousel-navigator-container {
     z-index: 99999;
     position: absolute;
