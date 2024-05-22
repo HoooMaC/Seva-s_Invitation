@@ -1,82 +1,68 @@
-import TopNavbar from "../components/TopNavbar";
+import { useState } from "react";
 
-import "./Family.css";
-
-import placeholderImage from "../assets/images/temp/PLACEHOLDER IMAGE.png";
 import { AnimatePresence, motion } from "framer-motion";
-import React, { useRef, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faChevronLeft,
   faChevronRight,
 } from "@fortawesome/free-solid-svg-icons";
+
+import TopNavbar from "../components/TopNavbar";
 import Button from "../components/Button.jsx";
 
-const variantIn = {
-  initial: {
-    y: 0,
-    x: 100,
-    scale: 0.7,
-    opacity: 0,
-  },
-  animate: {
-    x: 0,
-    y: 0,
-    scale: 1,
-    opacity: 1,
-    transition: {
-      duration: 0.2,
-    },
-  },
-  exit: {
-    y: 0,
-    x: -100,
-    scale: 0.7,
-    opacity: 0,
-    transition: {
-      duration: 0.2,
-    },
-  },
-};
+import families from "../constants/familes.js";
 
-const variantOut = {
-  initial: {
-    y: 0,
-    x: -100,
-    scale: 0.7,
-    opacity: 0,
-  },
-  animate: {
-    y: 0,
-    x: 0,
-    scale: 1,
-    opacity: 1,
-    transition: {
-      duration: 0.2,
-    },
-  },
-  exit: {
-    y: 0,
-    x: 100,
-    scale: 0.7,
-    opacity: 0,
-    transition: {
-      duration: 0.2,
-    },
-  },
-};
+import "./Family.css";
 
-const CarouselCard = ({ id, title, subtitle, placeholderImage, animate }) => {
+const CarouselCard = ({ id, title, subtitle, image, animationDirection }) => {
   return (
     <motion.div
-      variants={animate ? variantIn : variantOut}
+      variants={{
+        initial: {
+          x: animationDirection === "next" ? 100 : -100,
+          scale: 0.7,
+          opacity: 0,
+        },
+        animate: {
+          x: 0,
+          scale: 1,
+          opacity: 1,
+          transition: {
+            duration: 0.2,
+          },
+        },
+        exit: {
+          x: animationDirection === "next" ? -100 : 100,
+          scale: 0.7,
+          opacity: 0,
+          transition: {
+            duration: 0.2,
+          },
+        },
+      }}
       initial="initial"
       animate="animate"
       exit="exit"
       id={id}
       className="family-card"
     >
-      <img src={placeholderImage} alt={title} className="family-image" />
+      <div className="image-wrapper">
+        <motion.img
+          onHoverStart={() => console.log("hover child")}
+          whileHover={{
+            scale: 1.1,
+            opacity: 0.8,
+            transition: {
+              type: "tween",
+              duration: 0.2,
+              // ease: "easeInOut",
+            },
+          }}
+          src={image}
+          alt={title}
+          className="family-image"
+        />
+      </div>
       <h1 className="family-name">{title}</h1>
       <p className="family-subtitle">{subtitle}</p>
     </motion.div>
@@ -84,51 +70,35 @@ const CarouselCard = ({ id, title, subtitle, placeholderImage, animate }) => {
 };
 
 const Family = () => {
-  const items = [
-    {
-      id: "1",
-      title: "Jhon",
-      subtitle: "Unset",
-      image: placeholderImage,
-    },
-    {
-      id: "2",
-      title: "Emma",
-      subtitle: "Unset",
-      image: placeholderImage,
-    },
-    {
-      id: "3",
-      title: "Doe",
-      subtitle: "Unset",
-      image: placeholderImage,
-    },
-    {
-      id: "4",
-      title: "Asep",
-      subtitle: "Unset",
-      image: placeholderImage,
-    },
-  ];
-  const [index, setIndex] = useState(0);
-  const [isForward, setIsForward] = useState();
+  const [sliderState, setSliderState] = useState({
+    currentIndex: 0,
+    direction: "next",
+  });
+
   const handleNext = () => {
-    setIsForward(true);
-    setIndex(prevIndex => (prevIndex + 1) % items.length);
+    setSliderState(prevState => ({
+      ...prevState,
+      direction: "next",
+      currentIndex: (prevState.currentIndex + 1) % families.length,
+    }));
   };
 
   const handlePrev = () => {
-    setIsForward(false);
-    setIndex(prevIndex => (prevIndex - 1 + items.length) % items.length);
+    setSliderState(prevState => ({
+      ...prevState,
+      direction: "prev",
+      currentIndex:
+        (prevState.currentIndex - 1 + families.length) % families.length,
+    }));
   };
 
   return (
     <>
       <TopNavbar className="fixed-top"></TopNavbar>
 
-      <div className="board-title-container">
-        <h1 className="board-title">KELUARGA</h1>
-      </div>
+      {/*<div className="board-title-container">*/}
+      {/*  <h1 className="board-title">KELUARGA</h1>*/}
+      {/*</div>*/}
 
       <div className="family-section">
         <div className="carousel-navigator-container">
@@ -141,12 +111,12 @@ const Family = () => {
         </div>
         <AnimatePresence initial={false} mode={"wait"}>
           <CarouselCard
-            key={items[index].id}
-            id={items[index].id}
-            title={items[index].title}
-            subtitle={items[index].subtitle}
-            placeholderImage={items[index].image}
-            animate={isForward}
+            key={families[sliderState.currentIndex].id}
+            id={families[sliderState.currentIndex].id}
+            title={families[sliderState.currentIndex].title}
+            subtitle={families[sliderState.currentIndex].subtitle}
+            image={families[sliderState.currentIndex].image}
+            animationDirection={sliderState.direction}
           />
         </AnimatePresence>
       </div>
