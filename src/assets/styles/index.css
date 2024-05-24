@@ -1,70 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Luxurious+Script&display=swap');
+
 :root {
-  --clr-primary: #fce0df;
-  --clr-secondary: #d6a09e;
-  --clr-tertiary: #ce726f;
-  --clr-white: #ffffff;
-  --clr-background: #f8f4f4;
-  --clr-text: #070505;
+    --clr-primary: #fce0df;
+    --clr-secondary: #d6a09e;
+    --clr-tertiary: #ce726f;
+    --clr-white: #ffffff;
+    --clr-background: #f3f3f3;
+    --clr-text: #070505;
 
-  --clr-success: #16e816;
-  --clr-error: #ff224a;
+    --clr-success: #16e816;
+    --clr-error: #ff224a;
 
-  --clr-placehoder-text: #777777;
+    --clr-placehoder-text: #777777;
 
-  --font-heading: "Century725 Cn BT";
-  --font-paragraph: "Inter", sans-serif;
+    --font-heading: "Century725 Cn BT";
+    --font-paragraph: "Inter", sans-serif;
 
-  --radius-xxl: 32px;
-  --radius-lg: 24px;
-  --radius-base: 16px;
-  --radius-s: 8px;
-  --radius-xs: 4px;
+    --radius-xxl: 32px;
+    --radius-lg: 24px;
+    --radius-base: 16px;
+    --radius-s: 8px;
+    --radius-xs: 4px;
 
-  --shadow-base: 7px 8px 7px 0px rgba(0, 0, 0, 0.25);
-  --shadow-button: 3px 2px 4px 0px rgba(0, 0, 0, 0.5);
+    --shadow-base: 7px 8px 7px 0px rgba(0, 0, 0, 0.25);
+    --shadow-behind-box: 0 0 20.6px 0 rgba(0, 0, 0, 0.25);
+    --shadow-button: 3px 2px 4px 0px rgba(0, 0, 0, 0.5);
 
-  --pad-sm: 8px;
-  --pad-base: 16px;
-  --pad-lg: 24px;
-  --pad-xl: 32px;
+    --pad-sm: 8px;
+    --pad-base: 16px;
+    --pad-lg: 24px;
+    --pad-xl: 32px;
 
-  --gap-xs: 4px;
-  --gap-sm: 8px;
-  --gap-base: 16px;
-  --gap-lg: 24px;
-  --gap-xl: 32px;
+    --gap-xs: 4px;
+    --gap-sm: 8px;
+    --gap-base: 16px;
+    --gap-lg: 24px;
+    --gap-xl: 32px;
 
-  --icon-sz: 24px;
+    --icon-sz: 24px;
 
-  --navbar-height: calc(var(--icon-sz) + (var(--pad-base) * 4));
+    --navbar-height: calc(var(--icon-sz) + (var(--pad-base) * 4));
 }
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    overflow: hidden !important;
 }
 
 body {
-  height: 100dvh;
-  width: 100dvw;
-  overflow: hidden;
+    height: 100dvh;
+    width: 100dvw;
+    overflow: hidden;
 }
 
 a,
 button {
-  display: inline-block;
-  padding: 0;
-  border: none;
-  background: none;
-  cursor: pointer;
-  color: white;
-  text-decoration: none;
+    display: inline-block;
+    padding: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+    color: white;
+    text-decoration: none;
 }
 
 @font-face {
-  font-family: "Century725 Cn BT";
-  src: url("../fonts/cen725c.ttf") format("truetype");
+    font-family: "Century725 Cn BT";
+    src: url("../fonts/cen725c.ttf") format("truetype");
 }
 
 h1,
@@ -73,5 +80,5 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Century725 Cn BT", sans-serif;
+    font-family: "Century725 Cn BT", sans-serif;
 }

@@ -1,58 +1,71 @@
 .top-navbar {
-  display: flex;
-  justify-content: space-between;
-  position: relative;
-  z-index: 8;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    z-index: 8;
 }
 
 .menu {
-  position: absolute;
-  box-shadow: 0 0 0 100vmax var(--clr-secondary);
-  background-color: var(--clr-secondary);
-  z-index: 9;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  gap: 8px;
+    position: absolute;
+    width: 100%;
+    padding: 32px;
+    z-index: 9;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 8px;
 }
+
 .menu-container {
-  /* position: absolute; */
-  background-color: var(--clr-secondary);
-  width: 360px;
-  height: 80svh;
+    /* position: absolute; */
+    width: 360px;
+    height: 80svh;
 }
+
+.menu-close-wrapper {
+    width: 360px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 16px;
+}
+
 .menu-close-button {
-  align-self: flex-end;
-}
-.menu-box {
-  width: 100%;
-  height: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  /* background: linear-gradient(169deg, #FFF 1.08%, #6A8D6C 97.7%); */
+    position: absolute;
+    right: 0;
+    /*right: 0;*/
 }
 
 .menu-box {
-  display: flex;
-  flex-direction: column;
-  padding: var(--pad-lg);
-  justify-content: center;
-  gap: 24px;
+    width: 100%;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.menu-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 24px;
+    max-width: 360px;
 }
 
 .menu-separator {
-  border: none;
-  height: 2px;
-  border-radius: 50%;
-  background-color: var(--clr-white);
+    border: none;
+    height: 2px;
+    border-radius: 50%;
+    background-color: var(--clr-white);
 }
+
 .menu-section {
-  display: flex;
-  flex-direction: column;
-  background-color: var(--clr-tertiary);
-  padding: var(--pad-base);
-  border-radius: var(--radius-base);
-  align-items: center;
-  gap: 16px;
-  box-shadow: var(--shadow-base);
+    display: flex;
+    flex-direction: column;
+    background-color: var(--clr-tertiary);
+    padding: var(--pad-base);
+    border-radius: var(--radius-base);
+    align-items: center;
+    gap: 16px;
+    box-shadow: var(--shadow-base);
 }

@@ -1,5 +1,5 @@
 import Button from "../components/Button";
-import Background from "../components/Background";
+import Background from "../Background.jsx";
 
 import logo from "../assets/images/S_A.png";
 

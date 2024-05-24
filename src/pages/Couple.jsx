@@ -13,56 +13,60 @@ const Couple = () => {
 
   return (
     <>
-      <TopNavbar>
-        <div className="date-option">
-          <Button
-            // to="/date/akad"
-            onClick={() => setGroom(true)}
-            className={`top-navbar-button ${groom ? "active" : ""}`}
-          >
-            <HeartIcon />
-          </Button>
-          <Button
-            // to="/date/resepsi"
-            onClick={() => setGroom(false)}
-            className={`top-navbar-button ${!groom ? "active" : ""}`}
-          >
-            <HeartIcon />
-          </Button>
-        </div>
-      </TopNavbar>
+      <div className="container">
+        <div className="col-container border-debug">
+          <TopNavbar>
+            <div className="date-option">
+              <Button
+                // to="/date/akad"
+                onClick={() => setGroom(true)}
+                className={`top-navbar-button ${groom ? "active" : ""}`}
+              >
+                <HeartIcon />
+              </Button>
+              <Button
+                // to="/date/resepsi"
+                onClick={() => setGroom(false)}
+                className={`top-navbar-button ${!groom ? "active" : ""}`}
+              >
+                <HeartIcon />
+              </Button>
+            </div>
+          </TopNavbar>
 
-      {groom ? (
-        <>
-          <img
-            src={placeholder}
-            className="couple-image"
-            alt=""
-            key="groom-image"
-          />
-          <img
-            src={imageTitle}
-            className="couple-title"
-            alt=""
-            key="groom-title"
-          />
-        </>
-      ) : (
-        <>
-          <img
-            src={placeholder}
-            className="couple-image"
-            alt=""
-            key="the-bridge-image"
-          />
-          <img
-            src={imageTitle}
-            className="couple-title"
-            alt=""
-            key="the-bridge-title"
-          />
-        </>
-      )}
+          {groom ? (
+            <>
+              <img
+                src={placeholder}
+                className="couple-image"
+                alt=""
+                key="groom-image"
+              />
+              <img
+                src={imageTitle}
+                className="couple-title"
+                alt=""
+                key="groom-title"
+              />
+            </>
+          ) : (
+            <>
+              <img
+                src={placeholder}
+                className="couple-image"
+                alt=""
+                key="the-bridge-image"
+              />
+              <img
+                src={imageTitle}
+                className="couple-title"
+                alt=""
+                key="the-bridge-title"
+              />
+            </>
+          )}
+        </div>
+      </div>
     </>
   );
 };

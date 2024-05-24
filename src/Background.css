@@ -1,0 +1,18 @@
+
+#background-root {
+    width: inherit;
+    height: inherit;
+    z-index: -2;
+    position: absolute;
+    overflow: hidden;
+    background: var(--clr-background);
+}
+
+.background {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: clamp(360px, 100%, 400px);
+    height: 100%;
+    transform: translate(-50%);
+}

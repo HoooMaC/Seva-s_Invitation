@@ -1,164 +1,162 @@
 form {
-  height: 100%;
+    height: 100%;
 }
 
 .greeting-form-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  gap: 16px;
-  height: 100%;
-  /* background-color: red; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    height: 100%;
+    /* background-color: red; */
 }
 
 .greeting-form-header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
 }
 
 .greeting-form-icon {
-  height: 92px;
-  width: 92px;
+    height: 92px;
+    width: 92px;
 }
 
 .greeting-form-icon > * {
-  fill: var(--clr-secondary) !important;
+    fill: var(--clr-secondary) !important;
 }
 
 .greeting-form-title {
-  color: var(--clr-secondary);
-  text-align: center;
-  font-family: Inter, sans-serif;
-  font-size: 24px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: normal;
-  text-transform: uppercase;
+    color: var(--clr-secondary);
+    text-align: center;
+    font-family: Inter, sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    text-transform: uppercase;
 }
 
 .greeting-form-emphasizes {
-  font-weight: 900;
+    font-weight: 900;
 }
 
 .greeting-form-subtitle {
-  color: #6f6f6f;
-  font-family: Inter, sans-serif;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  text-align: center;
+    color: #6f6f6f;
+    font-family: Inter, sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-align: center;
 }
 
 .greeting-form-body {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  gap: 8px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 8px;
 }
 
 .identity {
-  display: flex;
-  width: 100%;
-  justify-content: center;
-  align-items: center;
-  gap: var(--gap-xs);
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    gap: var(--gap-xs);
 }
 
 .input-wrapper {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  /*height: 100%;*/
-  justify-content: flex-end;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    /*height: 100%;*/
+    justify-content: flex-end;
 }
 
 .input-label {
-  color: #6d6d6d;
-  font-family: "Inter", sans-serif;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: normal;
-  /*height: 100%;*/
+    color: #6d6d6d;
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    /*height: 100%;*/
 }
 
 .input-label > .image-preview {
-  /* myself pov ; "WHAAAAAAAAAT" */
-  width: clamp(32px, 32px, 32px);
-  height: clamp(32px, 32px, 32px);
+    /* myself pov ; "WHAAAAAAAAAT" */
+    width: clamp(32px, 32px, 32px);
+    height: clamp(32px, 32px, 32px);
 
-  border-radius: var(--radius-xs);
+    border-radius: var(--radius-xs);
 }
 
 .input-field[type="file"] {
-  display: none;
+    display: none;
 }
 
 .input-label[for="icon"] {
-  box-shadow: 1px 1px 0 0 rgba(0, 0, 0, 0.25);
-  height: 100%;
-  /*margin: 4px;*/
-  cursor: pointer;
-  border: 2px solid #d9d9d9;
-  padding: 4px;
-  border-radius: var(--radius-s);
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  /*justify-content: space*/
-  align-items: center;
-  --clr-profileBg: unset;
+    height: 100%;
+    cursor: pointer;
+    border: 2px solid #d9d9d9;
+    padding: 4px;
+    border-radius: var(--radius-s);
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    /*justify-content: space*/
+    align-items: center;
+    --clr-profileBg: unset;
 }
 
 .input-label[for="icon"]:hover > p {
-  background-color: var(--clr-profileBg);
+    background-color: var(--clr-profileBg);
 }
 
 .input-label:hover > svg > path {
-  fill: white !important;
+    fill: white !important;
 }
 
 .input-label[for="icon"] > p {
-  color: var(--clr-text);
-  border-radius: 4px;
-  font-size: 10px;
-  padding: 4px;
-  background-color: #d9d9d9;
+    color: var(--clr-text);
+    border-radius: 4px;
+    font-size: 10px;
+    padding: 4px;
+    background-color: #d9d9d9;
 }
 
 .input-label[for="icon"] > p:hover {
-  --clr-profileBg: #d9d9d9;
+    --clr-profileBg: #d9d9d9;
 }
 
 .input-label[for="icon"]:hover > p {
-  background-color: white;
+    background-color: white;
 }
 
 .input-label[for="icon"]:hover {
-  background-color: #d9d9d9;
-  color: #ffffff;
+    background-color: #d9d9d9;
+    color: #ffffff;
 }
 
 .input-field {
-  border-radius: var(--radius-xs);
-  border: 2px solid #d9d9d9;
-  background: rgba(255, 255, 255, 0.5);
-  box-shadow: 1px 1px 0 0 rgba(0, 0, 0, 0.25);
-  padding: var(--pad-sm);
-  resize: none;
+    border-radius: var(--radius-xs);
+    border: 2px solid #d9d9d9;
+    background: rgba(255, 255, 255, 0.5);
+    box-shadow: 1px 1px 0 0 rgba(0, 0, 0, 0.25);
+    padding: var(--pad-sm);
+    resize: none;
 }
 
 .input-field[name="name"] {
-  /*flex-grow: 1;*/
+    /*flex-grow: 1;*/
 }
 
 .input-wrapper:has(.input-field.text-area),
 .input-field.text-area {
-  height: 100%;
+    height: 100%;
 }

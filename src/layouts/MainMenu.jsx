@@ -7,13 +7,10 @@ import { Outlet } from "react-router-dom";
 const MainMenu = ({ children }) => {
   return (
     <>
-      <Background />
+      {/*<Background />*/}
 
-      <div className="container">
-        <div className="col-container">
-          <Outlet />
-        </div>
-      </div>
+      <Outlet />
+
       <Navbar />
     </>
   );

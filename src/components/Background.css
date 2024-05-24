@@ -1,28 +1,30 @@
 .background {
-  position: fixed;
-  top: 0;
-  left: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
 
-  width: 100dvw;
-  height: 100dvh;
+    width: 100dvw;
+    height: 100dvh;
+    background-color: #f3f3f3;
 }
 
 .background.white {
-  background-color: white;
-  z-index: -2;
+    z-index: -2;
 }
-.background.image {
-  background: url("../assets/images/background.png") lightgray 50%;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-attachment: fixed;
 
-  z-index: -2;
+.background.image {
+    background: url("../assets/images/background.png") lightgray 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+
+    z-index: -2;
 }
 
 .background.image.blur {
-  filter: blur(6px);
+    filter: blur(6px);
 }
+
 .background.image.blur:hover {
 }

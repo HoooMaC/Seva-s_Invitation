@@ -1,3 +1,16 @@
+.margin-top-1 {
+    margin-top: 16px;
+}
+
+.base-shadow {
+    box-shadow: var(--shadow-base);
+}
+
+.shadow-behind-box {
+    box-shadow: var(--shadow-behind-box);
+}
+
+
 .container {
     position: relative;
 

@@ -6,7 +6,7 @@ const LocationBox = ({ place, address, href }) => {
     <div className="location-box">
       <h2 className="location-title">{place}</h2>
       <p className="location-address">{address}</p>
-      <Button href={href} className="button-secondary">
+      <Button href={href} className="button-secondary margin-top-1">
         Buka di Google Map
       </Button>
     </div>

@@ -53,9 +53,15 @@ const Navbar = () => {
     isNavItemClick.current = true;
     const element = buttonRefs.current[index];
     if (element) {
+      const navbarRect = document
+        .querySelector(".navbar")
+        .getBoundingClientRect();
       const rect = element.getBoundingClientRect();
+      const parentElement = element.parentElement.getBoundingClientRect();
+      const translateTo = parentElement.width * index + 1;
       controls.start({
-        x: `${rect.left - 22}px`,
+        x: `${translateTo}px`,
+        // x: `0px`,
         transition: {
           duration: 0.3, // Specify the duration in seconds
           ease: "easeInOut", // Specify the easing function
@@ -74,6 +80,7 @@ const Navbar = () => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
+
   useEffect(() => {
     if (!isNavItemClick.current) {
       // get the active link
@@ -82,14 +89,7 @@ const Navbar = () => {
       });
       if (index !== -1) {
         // get the position
-        const rect = buttonRefs.current[index].getBoundingClientRect();
-        controls.start({
-          x: `${rect.left - 24}px`,
-          transition: {
-            duration: 0.3,
-            ease: "easeInOut",
-          },
-        });
+        handleNavItemClick(index);
       }
     }
     isNavItemClick.current = false;
@@ -98,14 +98,18 @@ const Navbar = () => {
   return (
     <>
       <div className={`navbar-container`}>
-        <motion.img
-          initial={{ x: 0 }}
-          animate={controls}
-          style={{ position: "fixed", bottom: "30px", zIndex: -2 }}
-          src={NavbarIndicatorIcon}
-          alt="indicator"
-        />
         <div className="navbar">
+          <motion.img
+            initial={{ x: 0 }}
+            animate={controls}
+            style={{
+              position: "absolute",
+              bottom: "30px",
+              zIndex: -2,
+            }}
+            src={NavbarIndicatorIcon}
+            alt="indicator"
+          />
           {navItem.map(item => {
             const isActive = location.pathname === item.path;
             return (
@@ -125,12 +129,14 @@ const Navbar = () => {
                 key={item.key}
               >
                 <Link
-                  className={`${isActive ? "active-link" : ""} `}
-                  to={item.path}
+                  className="click-area"
                   ref={el => (buttonRefs.current[item.key - 1] = el)}
                   onClick={() => handleNavItemClick(item.key - 1)}
+                  to={item.path}
                 >
-                  {item.icon}
+                  <div className={`${isActive ? "active-link" : ""} `}>
+                    {item.icon}
+                  </div>
                 </Link>
               </motion.div>
             );

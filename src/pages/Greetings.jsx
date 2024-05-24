@@ -11,13 +11,15 @@ import GreetingCard from "../components/GreetingCard";
 import "./Greetings.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTriangleExclamation } from "@fortawesome/free-solid-svg-icons";
+import Background from "../Background.jsx";
 
 const Greetings = () => {
-  const [data, setData] = useState([]);
   const BASE_URL = import.meta.env.VITE_API_BASE_URL;
+  const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(false);
 
+  // TODO Change with react query
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -68,51 +70,80 @@ const Greetings = () => {
   };
   return (
     <>
-      <TopNavbar className="fixed-top"></TopNavbar>
-      <div className="board-title-container">
-        <h1 className="board-title">PAPAN PESAN</h1>
-      </div>
-      {error ? (
-        <div className="error-box">
-          <FontAwesomeIcon
-            icon={faTriangleExclamation}
-            color="#ff224a"
-            size="6x"
-          />
-          <h3 className="error-header">Something went wrong</h3>
-          <p>Please try again later</p>
-        </div>
-      ) : isLoading ? (
+      <Background>
         <motion.div
-          className="loading-box"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-        >
-          <BeatLoader
-            color="#D6A09E"
-            loading={isLoading}
-            // cssOverride={override}
-            size={20}
-            aria-label="Loading Spinner"
-            data-testid="loader"
-          />
-        </motion.div>
-      ) : (
-        <div className="section">
-          <div className="scrollable-container">
-            <RenderData />
-            <div style={{ width: "100%", minHeight: "10vh" }}></div>
+          initial={{ right: "-50%", top: "-10%", scale: 1, opacity: 0 }}
+          animate={{
+            right: "-20%",
+            top: 0,
+            opacity: 1,
+            scale: 2,
+            transition: { type: "tween", duration: 0.3, ease: "easeInOut" },
+          }}
+          className="circle-effect"
+        />
+        <motion.div
+          initial={{ left: "-50%", bottom: 0, scale: 1, opacity: 0 }}
+          animate={{
+            left: "-20%",
+            bottom: 0,
+            scale: 2,
+            opacity: 1,
+            transition: { type: "tween", duration: 0.3, ease: "easeInOut" },
+          }}
+          className="circle-effect"
+        />
+      </Background>
+
+      <div className="container">
+        <div className="col-container">
+          <TopNavbar className="fixed-top"></TopNavbar>
+          <div className="board-title-container">
+            <h1 className="board-title">PAPAN PESAN</h1>
           </div>
-          {/* Need to check if the user hasn't write any greeting letter yet */}
-          <Button
-            className="circle-button new-greeting-button"
-            to="/new-greeting"
-          >
-            <PlusIcon />
-          </Button>
+          {error ? (
+            <div className="error-box">
+              <FontAwesomeIcon
+                icon={faTriangleExclamation}
+                color="#ff224a"
+                size="6x"
+              />
+              <h3 className="error-header">Something went wrong</h3>
+              <p>Please try again later</p>
+            </div>
+          ) : isLoading ? (
+            <motion.div
+              className="loading-box"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+            >
+              <BeatLoader
+                color="#D6A09E"
+                loading={isLoading}
+                // cssOverride={override}
+                size={20}
+                aria-label="Loading Spinner"
+                data-testid="loader"
+              />
+            </motion.div>
+          ) : (
+            <div className="section">
+              <div className="scrollable-container">
+                <RenderData />
+                <div style={{ width: "100%", minHeight: "10vh" }}></div>
+              </div>
+              {/* Need to check if the user hasn't write any greeting letter yet */}
+              <Button
+                className="circle-button new-greeting-button"
+                to="/new-greeting"
+              >
+                <PlusIcon />
+              </Button>
+            </div>
+          )}
         </div>
-      )}
+      </div>
     </>
   );
 };

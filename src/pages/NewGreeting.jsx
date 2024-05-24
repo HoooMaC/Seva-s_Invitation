@@ -12,6 +12,7 @@ import ModalSuccess, { ModalImagePreview } from "../components/Modal.jsx";
 
 import "./NewGreeting.css";
 import { zodResolver } from "@hookform/resolvers/zod";
+import Modal from "../Modal.jsx";
 
 // do we neeed this???
 axios.defaults.withCredentials = true;
@@ -70,7 +71,7 @@ const schema = z.object({
 });
 
 const NewGreeting = () => {
-  const [success, setSuccess] = useState(false);
+  const [success, setSuccess] = useState();
   const [imagePreview, setImagePreview] = useState();
   const [imageModalStatus, setImageModalStatus] = useState(false);
   const [file, setFile] = useState();
@@ -133,19 +134,23 @@ const NewGreeting = () => {
     <>
       <Background />
       {success && (
-        <ModalSuccess
-          title="Selamat"
-          message="Pesan berhasil ditambahkan"
-          buttonMessage="Kembali ke papan pesan"
-        />
+        <Modal>
+          <ModalSuccess
+            title="Selamat"
+            message="Pesan berhasil ditambahkan"
+            buttonMessage="Kembali ke papan pesan"
+          />
+        </Modal>
       )}
       {imagePreview && imageModalStatus && (
-        <ModalImagePreview
-          image={imagePreview}
-          changeCallback={openIconInput}
-          deleteCallback={deleteCurrentImage}
-          exitCallback={() => setImageModalStatus(false)}
-        />
+        <Modal>
+          <ModalImagePreview
+            image={imagePreview}
+            changeCallback={openIconInput}
+            deleteCallback={deleteCurrentImage}
+            exitCallback={() => setImageModalStatus(false)}
+          />
+        </Modal>
       )}
       <div className="container">
         <div className="col-container">
@@ -171,7 +176,7 @@ const NewGreeting = () => {
               <div className="greeting-form-body">
                 <div className="identity">
                   <label
-                    className="input-label"
+                    className="input-label base-shadow"
                     htmlFor="icon"
                     onClick={
                       !imageModalStatus && imagePreview
@@ -197,7 +202,7 @@ const NewGreeting = () => {
                   </label>
                   <input
                     onChange={handleChange}
-                    className="input-field"
+                    className="input-field base-shadow"
                     type="file"
                     name="icon"
                     id="icon"
@@ -210,7 +215,7 @@ const NewGreeting = () => {
                       Nama
                     </label>
                     <input
-                      className="input-field"
+                      className="input-field base-shadow"
                       autoFocus
                       type="text"
                       name="name"
@@ -227,7 +232,7 @@ const NewGreeting = () => {
                     Hubungan (Opsional)
                   </label>
                   <input
-                    className="input-field"
+                    className="input-field base-shadow"
                     type="text"
                     name="relation"
                     placeholder="Contoh : Sepupu"
@@ -239,7 +244,7 @@ const NewGreeting = () => {
                     Pesan
                   </label>
                   <textarea
-                    className="input-field text-area"
+                    className="input-field text-area base-shadow"
                     name="message"
                     id="message"
                     placeholder="Contoh : Semoga Sakinah Mawaddah Warahmah"
@@ -250,14 +255,16 @@ const NewGreeting = () => {
                   )}
                 </div>
               </div>
-              <Button disabled={isSubmitting} className="button-liquid">
+              <Button
+                disabled={isSubmitting}
+                className="button-liquid base-shadow"
+              >
                 {isSubmitting ? "Submitting..." : "Submit"}
               </Button>
             </div>
           </form>
         </div>
       </div>
-      ;
     </>
   );
 };
