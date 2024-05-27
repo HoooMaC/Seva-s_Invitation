@@ -76,7 +76,10 @@ const Date = () => {
         </motion.h1>
       </Background>
       <div className="container">
-        <div className="col-container">
+        <div
+          className="col-container"
+          style={{ justifyContent: "space-between" }}
+        >
           <TopNavbar>
             <div className="date-option">
               <Button
@@ -95,74 +98,77 @@ const Date = () => {
           </TopNavbar>
 
           <AnimatePresence mode="wait">
-            <div className="row">
-              {akadPage && (
-                <motion.div
-                  className="date-location-wrapper"
-                  key="first"
-                  variants={divVariant}
-                  initial={{
-                    opacity: 0,
-                    x: 50,
-                    scale: 0.9,
-                  }}
-                  animate="mid"
-                  exit={{
-                    opacity: 0,
-                    x: 50,
-                    scale: 0.9,
-                  }}
-                  transition={{
-                    duration: 0.3,
-                    ease: "easeInOut",
-                  }}
-                >
-                  <DateBox
-                    event="Akad Nikah"
-                    icon={CoupleRing}
-                    date="01 Januari 2023"
-                  />
-                  <LocationBox
-                    place="Gedung Puri Cendana"
-                    address="Jl. Baharuddin Yusuf, Tembilahan Kota, Kec. Tembilahan, Kabupaten Indragiri Hilir, Riau 29214"
-                  />
-                </motion.div>
-              )}
+            {akadPage && (
+              <motion.div
+                className="date-location-wrapper"
+                key="first"
+                variants={divVariant}
+                initial={{
+                  opacity: 0,
+                  x: 50,
+                  scale: 0.8,
+                }}
+                animate="mid"
+                exit={{
+                  opacity: 0,
+                  x: 50,
+                  scale: 0.8,
+                }}
+                transition={{
+                  duration: 0.3,
+                  ease: "easeInOut",
+                }}
+              >
+                <DateBox
+                  event="Akad Nikah"
+                  icon={CoupleRing}
+                  date="01 Januari 2023"
+                />
+                <LocationBox
+                  place="Gedung Puri Cendana"
+                  address="Jl. Baharuddin Yusuf, Tembilahan Kota, Kec. Tembilahan, Kabupaten Indragiri Hilir, Riau 29214"
+                />
+              </motion.div>
+            )}
 
-              {!akadPage && (
-                <motion.div
-                  className="date-location-wrapper"
-                  key="second"
-                  variants={divVariant}
-                  initial={{
-                    opacity: 0,
-                    x: -50,
-                    scale: 0.9,
-                  }}
-                  animate="mid"
-                  exit={{
-                    opacity: 0,
-                    x: -50,
-                    scale: 0.9,
-                  }}
-                  transition={{
-                    duration: 0.3,
-                    ease: "easeInOut",
-                  }}
-                >
-                  <DateBox
-                    event="Resepsi"
-                    icon={CoupleRing}
-                    date="01 Januari 2023"
-                  />
-                  <LocationBox
-                    place="Gedung Puri Cendana"
-                    address="Jl. Baharuddin Yusuf, Tembilahan Kota, Kec. Tembilahan, Kabupaten Indragiri Hilir, Riau 29214"
-                  />
-                </motion.div>
-              )}
-            </div>
+            {!akadPage && (
+              <motion.div
+                className="date-location-wrapper"
+                key="second"
+                variants={divVariant}
+                initial={{
+                  opacity: 0,
+                  x: -50,
+                  scale: 0.8,
+                }}
+                animate="mid"
+                exit={{
+                  opacity: 0,
+                  x: -50,
+                  scale: 0.8,
+                }}
+                transition={{
+                  duration: 0.3,
+                  ease: "easeInOut",
+                }}
+              >
+                <DateBox
+                  event="Resepsi"
+                  icon={CoupleRing}
+                  date="01 Januari 2023"
+                />
+                <LocationBox
+                  place="Gedung Puri Cendana"
+                  address="Jl. Baharuddin Yusuf, Tembilahan Kota, Kec. Tembilahan, Kabupaten Indragiri Hilir, Riau 29214"
+                />
+              </motion.div>
+            )}
           </AnimatePresence>
+
+          <div
+            className="dummy-box"
+            style={{ width: "100%", height: "40px" }}
+          ></div>
         </div>
       </div>
     </>

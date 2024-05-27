@@ -1,4 +1,14 @@
 .welcome-content {
-  justify-content: flex-end !important;
-  /* justify-content: center !important; */
+    justify-content: flex-end !important;
+    /* justify-content: center !important; */
+}
+
+.first-circle-effect {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    opacity: 0.8;
+    background: radial-gradient(50% 50% at 50% 50%, #CE726F 4.5%, rgba(255, 255, 255, 0.00) 100%);
+
+    filter: blur(50px);
 }

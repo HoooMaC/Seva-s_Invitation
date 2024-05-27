@@ -3,47 +3,67 @@ import TopNavbar from "../components/TopNavbar";
 import Button from "../components/Button";
 import { HeartIcon } from "../components/Icons";
 
-import placeholder from "../assets/images/temp/placeholder1.png";
-import imageTitle from "../assets/images/temp/seva-title.png";
+import brideImage from "../assets/images/couple/temp_bride.png";
+import brideTitle from "../assets/images/couple/bride_name.png";
+
+import groomImage from "../assets/images/couple/temp_groom.png";
+import groomTitle from "../assets/images/couple/groom_name.png";
 
 import "./Couple.css";
+import Background from "../Background.jsx";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faHeart,
+  faPerson,
+  faPersonDress,
+} from "@fortawesome/free-solid-svg-icons";
 
 const Couple = () => {
-  const [groom, setGroom] = useState(true);
+  const [isGroom, setIsGroom] = useState(true);
 
   return (
     <>
       <div className="container">
-        <div className="col-container border-debug">
+        <div
+          className="col-container"
+          style={{ justifyContent: "space-between" }}
+        >
           <TopNavbar>
             <div className="date-option">
               <Button
                 // to="/date/akad"
-                onClick={() => setGroom(true)}
-                className={`top-navbar-button ${groom ? "active" : ""}`}
+                onClick={() => setIsGroom(true)}
+                className={`top-navbar-button ${isGroom ? "active" : ""}`}
               >
-                <HeartIcon />
+                <FontAwesomeIcon
+                  className="transition"
+                  icon={faPerson}
+                  size={isGroom ? "2x" : "xl"}
+                />
               </Button>
               <Button
                 // to="/date/resepsi"
-                onClick={() => setGroom(false)}
-                className={`top-navbar-button ${!groom ? "active" : ""}`}
+                onClick={() => setIsGroom(false)}
+                className={`top-navbar-button ${!isGroom ? "active" : ""}`}
               >
-                <HeartIcon />
+                <FontAwesomeIcon
+                  icon={faPersonDress}
+                  size={!isGroom ? "2x" : "xl"}
+                />
               </Button>
             </div>
           </TopNavbar>
 
-          {groom ? (
+          {isGroom ? (
             <>
               <img
-                src={placeholder}
+                src={groomImage}
                 className="couple-image"
                 alt=""
-                key="groom-image"
+                key="the-groom-image"
               />
               <img
-                src={imageTitle}
+                src={groomTitle}
                 className="couple-title"
                 alt=""
                 key="groom-title"
@@ -52,13 +72,13 @@ const Couple = () => {
           ) : (
             <>
               <img
-                src={placeholder}
+                src={brideImage}
                 className="couple-image"
                 alt=""
-                key="the-bridge-image"
+                key="the-bride-image"
               />
               <img
-                src={imageTitle}
+                src={brideTitle}
                 className="couple-title"
                 alt=""
                 key="the-bridge-title"
@@ -67,6 +87,7 @@ const Couple = () => {
           )}
         </div>
       </div>
+      <div className="couple-overlay" style={{ zIndex: 2, left: 0 }}></div>
     </>
   );
 };
