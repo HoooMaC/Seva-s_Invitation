@@ -1,3 +1,44 @@
+.couple-bg-icon {
+    position: absolute;
+}
+
+.heart1 {
+    right: 0;
+    top: 40%;
+    transform: rotate(-18.086deg) translate(50%);
+    filter: blur(12px);
+}
+
+.heart2 {
+    left: 0;
+    top: 40%;
+    transform: rotate(-18.086deg) translate(-50%);
+    filter: blur(12px);
+}
+
+.heart3 {
+    left: 0;
+    top: 20%;
+    transform: rotate(18.086deg) translate(0%);
+    filter: blur(6px);
+}
+
+.heart4 {
+    right: 15%;
+    top: 15%;
+    transform: rotate(-18.086deg) translate(0%);
+    filter: blur(3px);
+}
+
+
+.couple-bg-icon.v1 > * {
+    fill: rgba(206, 114, 111, 0.64);
+}
+
+.couple-bg-icon.v2 > * {
+    fill: rgba(252, 224, 223, 0.88);
+}
+
 .couple-image {
     position: absolute;
     bottom: 0;

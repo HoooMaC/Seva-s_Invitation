@@ -1,28 +1,28 @@
-import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
-import MenuItem from './MenuItem';
-import { HomeIcon, ChevronLeftIcon, BarsIcon } from './Icons';
-import Button from './Button';
+import MenuItem from "./MenuItem";
+import { HomeIcon, ChevronLeftIcon, BarsIcon } from "./Icons";
+import Button from "./Button";
 
-import './TopNavbar.css';
-import { useLocation } from 'react-router-dom';
-import Modal from '../Modal.jsx';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faX } from '@fortawesome/free-solid-svg-icons';
+import "./TopNavbar.css";
+import { useLocation } from "react-router-dom";
+import Modal from "../Modal.jsx";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faX } from "@fortawesome/free-solid-svg-icons";
 
 const TopNavbar = ({ className, children }) => {
   const location = useLocation();
   const [menuOpened, setMenuOpened] = useState(false);
   return (
     <>
-      <div className={`top-navbar ${className ? className : ''}`}>
+      <div className={`top-navbar ${className ? className : ""}`}>
         <Button
-          to={location.pathname !== '/home' ? '/home' : '/letter'}
+          to={location.pathname !== "/home" ? "/home" : "/letter"}
           className="back-button"
         >
           {/* <ChevronLeftIcon /> */}
-          {location.pathname !== '/home' ? <HomeIcon /> : <ChevronLeftIcon />}
+          {location.pathname !== "/home" ? <HomeIcon /> : <ChevronLeftIcon />}
         </Button>
 
         {children}
@@ -47,7 +47,7 @@ const TopNavbar = ({ className, children }) => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              transition={{ duration: 0.2, ease: 'easeInOut' }}
+              transition={{ duration: 0.2, ease: "easeInOut" }}
             >
               <div className="menu-box">
                 <div className="menu-section">
@@ -64,7 +64,7 @@ const TopNavbar = ({ className, children }) => {
                 </div>
                 <hr className="menu-separator" />
                 <div className="menu-section">
-                  <MenuItem to="/info">Info</MenuItem>
+                  <MenuItem to="https://arzi.tech">Info</MenuItem>
                 </div>
               </div>
             </motion.div>

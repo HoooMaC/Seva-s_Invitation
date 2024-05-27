@@ -23,6 +23,33 @@ const Couple = () => {
 
   return (
     <>
+      <Background>
+        <FontAwesomeIcon
+          className="couple-bg-icon v1 heart1"
+          icon={faHeart}
+          size="8x"
+          fade
+        />
+        <FontAwesomeIcon
+          className="couple-bg-icon v2 heart2"
+          icon={faHeart}
+          size="10x"
+          fade
+        />
+        <FontAwesomeIcon
+          className="couple-bg-icon v1 heart3"
+          icon={faHeart}
+          size="4x"
+          fade
+        />
+        <FontAwesomeIcon
+          className="couple-bg-icon v2 heart4"
+          icon={faHeart}
+          size="4x"
+          fade
+        />
+      </Background>
+
       <div className="container">
         <div
           className="col-container"
