@@ -11,6 +11,8 @@ import Greetings from "./pages/Greetings";
 import MainMenu from "./layouts/MainMenu";
 import NewGreeting from "./pages/NewGreeting";
 import Experiment from "./pages/Experiment";
+import NotAttend from "./pages/NotAttend.jsx";
+import SendGift from "./pages/SendGift.jsx";
 
 const router = createBrowserRouter([
   {
@@ -52,6 +54,14 @@ const router = createBrowserRouter([
   {
     path: "/new-greeting",
     element: <NewGreeting />,
+  },
+  {
+    path: "/not-attend",
+    element: <NotAttend />,
+  },
+  {
+    path: "/send-gift",
+    element: <SendGift />,
   },
   {
     path: "/experiment",
