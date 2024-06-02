@@ -47,6 +47,9 @@
     height: inherit;
     left: 50%;
     translate: -50% 0;
+    z-index: 1;
+    filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.2));
+    pointer-events: none;
 }
 
 .couple-title {
@@ -65,6 +68,25 @@
     width: 100dvw;
     left: 0;
 }
+
+.first-name {
+    position: absolute;
+    top: 10%;
+    z-index: 10;
+    left: 40%;
+    translate: -50% 0;
+    overflow: visible;
+}
+
+.last-name {
+    position: absolute;
+    overflow: visible;
+    top: 30%;
+    left: 40%;
+    translate: -50% 0;
+    z-index: 0;
+}
+
 
 .svg-inline--fa.transition {
     transition: font-size 300ms ease-in-out;

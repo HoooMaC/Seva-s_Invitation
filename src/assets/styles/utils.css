@@ -21,9 +21,8 @@
 
     margin-right: auto;
     margin-left: auto;
-    /* width: 360px; */
-    /* max-width sesuai dengan container size    */
-    height: 100dvh;
+
+    min-height: 100dvh;
 }
 
 @media (width > 360px) {
@@ -46,6 +45,11 @@
     padding-top: 16px;
     padding-bottom: 48px;
     /*overflow-y: hidden;*/
+}
+
+.width-container {
+    margin: 0 auto;
+    width: clamp(200px, 100%, 360px);
 }
 
 /*.container .col-container:has(form) {*/

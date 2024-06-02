@@ -2,7 +2,6 @@ import axios from "axios";
 import { useState, useEffect, useRef } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleUser, faPenToSquare } from "@fortawesome/free-solid-svg-icons";
-import { nullable, z } from "zod";
 import { useForm } from "react-hook-form";
 
 import TopNavbar from "../components/TopNavbar";
@@ -11,93 +10,21 @@ import Background from "../components/Background";
 import ModalSuccess, { ModalImagePreview } from "../components/Modal.jsx";
 
 import "./NewGreeting.css";
-import { zodResolver } from "@hookform/resolvers/zod";
 import Modal from "../Modal.jsx";
 
 // do we neeed this???
 axios.defaults.withCredentials = true;
 
-const fileSchema = z
-  .instanceof(File)
-  .refine(
-    file => {
-      // Check if the file type is an image
-      if (!file.type.startsWith("image/")) {
-        return false;
-      }
-
-      // Check the file size (e.g., maximum size 2MB)
-      const maxSizeInBytes = 2 * 1024 * 1024; // 2MB
-      if (file.size > maxSizeInBytes) {
-        return false;
-      }
-
-      return true;
-    },
-    {
-      message: "File must be an image and less than 2MB",
-    },
-  )
-  .refine(
-    async file => {
-      // Check the image dimensions
-      const maxWidth = 1024; // Max width in pixels
-      const maxHeight = 1024; // Max height in pixels
-
-      return new Promise(resolve => {
-        const img = new Image();
-        img.src = URL.createObjectURL(file);
-
-        img.onload = () => {
-          URL.revokeObjectURL(img.src);
-          resolve(img.width <= maxWidth && img.height <= maxHeight);
-        };
-
-        img.onerror = () => {
-          resolve(false);
-        };
-      });
-    },
-    {
-      message: "Image dimensions must be less than 1024x1024 pixels",
-    },
-  );
-
-const schema = z.object({
-  name: z.string().min(1, "Name is required"),
-  icon: z.nullable(z.any()),
-  relation: z.string().nullable(),
-  message: z.string().min(8, "Message must be at least 8 characters long"),
-});
-
 const NewGreeting = () => {
   const [success, setSuccess] = useState();
-  const [imagePreview, setImagePreview] = useState();
-  const [imageModalStatus, setImageModalStatus] = useState(false);
-  const [file, setFile] = useState();
 
   const {
     register,
     handleSubmit,
     formState: { isSubmitting, errors },
-  } = useForm({
-    resolver: zodResolver(schema),
-  });
+  } = useForm({});
 
   const BASE_URL = import.meta.env.VITE_API_BASE_URL;
-
-  const handleChange = event => {
-    console.log(event.target.files[0]);
-    setFile(event.target.files[0]);
-
-    const reader = new FileReader();
-    reader.onload = function (e) {
-      setImagePreview(e.target.result);
-    };
-
-    // Baca isi file sebagai data URL
-    reader.readAsDataURL(event.target.files[0]);
-  };
 
   const onSubmit = data => {
     // data.append("icon", file);
@@ -113,23 +40,6 @@ const NewGreeting = () => {
       });
   };
 
-  const handleSingleClick = event => {
-    setImageModalStatus(true);
-    event.preventDefault();
-  };
-
-  const openIconInput = () => {
-    const imageInput = document.getElementById("icon");
-    if (imageInput) {
-      imageInput.click();
-    }
-  };
-
-  const deleteCurrentImage = () => {
-    setImagePreview(null);
-    setFile(null);
-  };
-
   return (
     <>
       <Background />
@@ -142,16 +52,7 @@ const NewGreeting = () => {
           />
         </Modal>
       )}
-      {imagePreview && imageModalStatus && (
-        <Modal>
-          <ModalImagePreview
-            image={imagePreview}
-            changeCallback={openIconInput}
-            deleteCallback={deleteCurrentImage}
-            exitCallback={() => setImageModalStatus(false)}
-          />
-        </Modal>
-      )}
+
       <div className="container">
         <div className="col-container">
           <TopNavbar></TopNavbar>
@@ -175,41 +76,6 @@ const NewGreeting = () => {
             <div className="greeting-form-container">
               <div className="greeting-form-body">
                 <div className="identity">
-                  <label
-                    className="input-label base-shadow"
-                    htmlFor="icon"
-                    onClick={
-                      !imageModalStatus && imagePreview
-                        ? handleSingleClick
-                        : null
-                    }
-                  >
-                    {imagePreview ? (
-                      <>
-                        <img src={imagePreview} className="image-preview" />
-                        <p>Preview</p>
-                      </>
-                    ) : (
-                      <>
-                        <FontAwesomeIcon
-                          icon={faCircleUser}
-                          color="#d9d9d9"
-                          size="2x"
-                        />
-                        <p>Upload</p>
-                      </>
-                    )}
-                  </label>
-                  <input
-                    onChange={handleChange}
-                    className="input-field base-shadow"
-                    type="file"
-                    name="icon"
-                    id="icon"
-                  />
-                  {errors.icon && (
-                    <p className="error-message">{errors.icon.message}</p>
-                  )}
                   <div className="input-wrapper">
                     <label className="input-label" htmlFor="name">
                       Nama

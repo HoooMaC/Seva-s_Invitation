@@ -18,42 +18,58 @@ import {
   faPersonDress,
 } from "@fortawesome/free-solid-svg-icons";
 
+import {
+  BrideFirstName,
+  BrideLastName,
+  GroomFirstName,
+} from "../svgs/CoupleNames.jsx";
+
+const CoupleTitle = src => {
+  return (
+    <>
+      {/*  First Name*/}
+
+      {/*  Second Name*/}
+    </>
+  );
+};
+
 const Couple = () => {
-  const [isGroom, setIsGroom] = useState(true);
+  const [isGroom, setIsGroom] = useState(false);
 
   return (
     <>
-      <Background>
-        <FontAwesomeIcon
-          className="couple-bg-icon v1 heart1"
-          icon={faHeart}
-          size="8x"
-          fade
-        />
-        <FontAwesomeIcon
-          className="couple-bg-icon v2 heart2"
-          icon={faHeart}
-          size="10x"
-          fade
-        />
-        <FontAwesomeIcon
-          className="couple-bg-icon v1 heart3"
-          icon={faHeart}
-          size="4x"
-          fade
-        />
-        <FontAwesomeIcon
-          className="couple-bg-icon v2 heart4"
-          icon={faHeart}
-          size="4x"
-          fade
-        />
-      </Background>
+      {/*<Background>*/}
+      {/*  <FontAwesomeIcon*/}
+      {/*    className="couple-bg-icon v1 heart1"*/}
+      {/*    icon={faHeart}*/}
+      {/*    size="8x"*/}
+      {/*    fade*/}
+      {/*  />*/}
+      {/*  <FontAwesomeIcon*/}
+      {/*    className="couple-bg-icon v2 heart2"*/}
+      {/*    icon={faHeart}*/}
+      {/*    size="10x"*/}
+      {/*    fade*/}
+      {/*  />*/}
+      {/*  <FontAwesomeIcon*/}
+      {/*    className="couple-bg-icon v1 heart3"*/}
+      {/*    icon={faHeart}*/}
+      {/*    size="4x"*/}
+      {/*    fade*/}
+      {/*  />*/}
+      {/*  <FontAwesomeIcon*/}
+      {/*    className="couple-bg-icon v2 heart4"*/}
+      {/*    icon={faHeart}*/}
+      {/*    size="4x"*/}
+      {/*    fade*/}
+      {/*  />*/}
+      {/*</Background>*/}
 
       <div className="container">
         <div
           className="col-container"
-          style={{ justifyContent: "space-between" }}
+          style={{ justifyContent: "space-between", minHeight: "100dvh" }}
         >
           <TopNavbar>
             <div className="date-option">
@@ -89,11 +105,10 @@ const Couple = () => {
                 alt=""
                 key="the-groom-image"
               />
-              <img
-                src={groomTitle}
-                className="couple-title"
-                alt=""
-                key="groom-title"
+              <GroomFirstName
+                width={"320px"}
+                height={"120px"}
+                className="first-name"
               />
             </>
           ) : (
@@ -104,17 +119,21 @@ const Couple = () => {
                 alt=""
                 key="the-bride-image"
               />
-              <img
-                src={brideTitle}
-                className="couple-title"
-                alt=""
-                key="the-bridge-title"
+              {/*<CoupleTitle src={brideSvg}></CoupleTitle>*/}
+              <BrideFirstName
+                width={"320px"}
+                height={"120px"}
+                className="first-name"
+              />
+              <BrideLastName
+                width={"320px"}
+                height={"120px"}
+                className="last-name"
               />
             </>
           )}
         </div>
       </div>
-      <div className="couple-overlay" style={{ zIndex: 2, left: 0 }}></div>
     </>
   );
 };

@@ -1,5 +1,3 @@
-import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
-
 import { motion } from "framer-motion";
 import React, { useEffect } from "react";
 // import "./Experiment.css";
@@ -52,31 +50,7 @@ const Experiment = () => {
     });
     // imageContent.addEventListener('click', e => {console.log("image component")});
   });
-  return (
-    <TransformWrapper>
-      {({ zoomToElement }) => (
-        <>
-          <button type="button" onClick={() => zoomToElement("image")}>
-            Zoom to element 1
-          </button>
-          <TransformComponent
-            onClick={e => console.log(e)}
-            style={{ zIndex: -2 }}
-          >
-            <div className="box">
-              <ImageFrame
-                id="image"
-                src={placeholderImage}
-                alt="image"
-                top="20%"
-                left="50%"
-              />
-            </div>
-          </TransformComponent>
-        </>
-      )}
-    </TransformWrapper>
-  );
+  return <div></div>;
 };
 
 export default Experiment;

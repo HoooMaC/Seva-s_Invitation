@@ -36,5 +36,24 @@
 
 .translate-left {
     transform: translateX(-50%) scale(2);
+}
 
+.home-image-container {
+    --each-image-gap: 16px;
+    --image-column: 2;
+    --image-width: calc((100% - (var(--each-image-gap) * var(--image-column))) / var(--image-column));
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: var(--each-image-gap);
+}
+
+
+.home-gallery-image {
+    background-color: #6a2d3c;
+    box-shadow: var(--shadow-base);
+    width: var(--image-width);
+    border-radius: 8px;
+    height: fit-content; /* heightnya disini nanti tergantung image*!*/
+    object-fit: cover;
 }

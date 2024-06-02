@@ -12,3 +12,8 @@
 
     filter: blur(50px);
 }
+
+.first-button {
+    position: absolute;
+    bottom: 4rem;
+}

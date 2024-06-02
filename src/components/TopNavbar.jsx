@@ -60,7 +60,7 @@ const TopNavbar = ({ className, children }) => {
                 </div>
                 <hr className="menu-separator" />
                 <div className="menu-section">
-                  <MenuItem to="/cant-attend">Tidak bisa hadir?</MenuItem>
+                  <MenuItem to="/not-attend">Tidak bisa hadir?</MenuItem>
                 </div>
                 <hr className="menu-separator" />
                 <div className="menu-section">

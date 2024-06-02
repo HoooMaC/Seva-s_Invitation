@@ -5,6 +5,7 @@ import Background from "../components/Background";
 import "./Letter.css";
 import { ChevronLeftIcon, ChevronRightIcon } from "../components/Icons.jsx";
 import bismillah from "../assets/images/bismillah.png";
+import { useEffect } from "react";
 
 const paragraphVariants = {
   hidden: {
@@ -34,7 +35,7 @@ const AnimatedText = ({ delay, className, children }) => {
       variants={paragraphVariants}
       initial="hidden"
       animate="visible"
-      style={{ maxWidth: "100%" }}
+      style={{ marginTop: "8px", maxWidth: "100%" }}
     >
       {getLetter(children).map((letter, index) => (
         <motion.span variants={paragraphVariants} key={index}>
@@ -59,7 +60,8 @@ const Letter = () => {
             className="letter"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 1, staggerChildren: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 2, staggerChildren: 1 }}
           >
             <motion.img
               variants={paragraphVariants}

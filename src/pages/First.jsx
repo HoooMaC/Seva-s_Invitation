@@ -42,12 +42,10 @@ const First = () => {
         />
       </Background>
       <div className="container">
-        <div className="col-container welcome-content">
-          <img className="title" src={logo} alt="seva dan alham" />
-          <Button className="button-liquid" to="/letter">
-            Buka Undangan
-          </Button>
-        </div>
+        <img className="title" src={logo} alt="seva dan alham" />
+        <Button className="button-liquid first-button" to="/letter">
+          Buka Undangan
+        </Button>
       </div>
     </>
   );
