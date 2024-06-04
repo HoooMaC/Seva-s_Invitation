@@ -3,18 +3,14 @@ import TopNavbar from "../components/TopNavbar";
 
 import Background from "../Background.jsx";
 
-import galleryImage1 from "../assets/images/gallery/gallery_landscape (1).jpg";
-import galleryImage2 from "../assets/images/gallery/gallery_landscape (2).jpg";
-import galleryImage3 from "../assets/images/gallery/gallery_landscape (3).jpg";
-import galleryImage4 from "../assets/images/gallery/gallery_landscape (4).jpg";
-import galleryImagePotrait1 from "../assets/images/gallery/gallery_potrait (1).jpg";
-import galleryImagePotrait2 from "../assets/images/gallery/gallery_potrait (2).jpg";
-import galleryImagePotrait3 from "../assets/images/gallery/gallery_potrait (3).jpg";
-import galleryImagePotrait4 from "../assets/images/gallery/gallery_potrait (4).jpg";
+import { galleryImages } from "../constants/gallery_images.js";
 
 import "./Home.css";
 
 import title from "../assets/images/Seva_Alham.png";
+import Section from "../components/section.jsx";
+import { faGift } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Home = () => {
   return (
@@ -44,68 +40,67 @@ const Home = () => {
         />
       </Background>
 
-      <div className="width-container" style={{ marginTop: "16px" }}>
-        <TopNavbar />
-      </div>
+      <TopNavbar />
       <section className="container">
         <img className="title" src={title} alt="" />
       </section>
-      <section id={"gallery"} className="container">
-        <div className="home-image-container">
-          <motion.img
-            whileHover={{ opacity: 0.5 }}
-            src={galleryImage1}
-            alt="foto pengantin"
-            className="home-gallery-image"
-          />
-          <motion.img
-            whileHover={{ opacity: 0.5 }}
-            src={galleryImage2}
-            alt="foto pengantin"
-            className="home-gallery-image"
-          />
 
-          <motion.img
-            whileHover={{ opacity: 0.5 }}
-            src={galleryImagePotrait1}
-            alt="foto pengantin"
-            className="home-gallery-image"
-          />
-          <motion.img
-            whileHover={{ opacity: 0.5 }}
-            src={galleryImagePotrait2}
-            alt="foto pengantin"
-            className="home-gallery-image"
-          />
-          <motion.img
-            whileHover={{ opacity: 0.5 }}
-            src={galleryImage3}
-            alt="foto pengantin"
-            className="home-gallery-image"
-          />
-          <motion.img
-            whileHover={{ opacity: 0.5 }}
-            src={galleryImage4}
-            alt="foto pengantin"
-            className="home-gallery-image"
-          />
-          <motion.img
-            whileHover={{ opacity: 0.5 }}
-            src={galleryImagePotrait3}
-            alt="foto pengantin"
-            className="home-gallery-image"
-          />
-          <motion.img
-            whileHover={{ opacity: 0.5 }}
-            src={galleryImagePotrait4}
-            alt="foto pengantin"
-            className="home-gallery-image"
-          />
+      <Section id={"gallery"}>
+        <h2 className={"section-title"}>Gallery</h2>
+
+        <div className="home-image-container">
+          {galleryImages.map(image => (
+            <motion.img
+              whileHover={{
+                scale: 2,
+                // transition: { duration: 0.2 },
+              }}
+              src={image}
+              alt="foto pengantin"
+              className="home-gallery-image"
+            />
+          ))}
         </div>
-      </section>
-      <section id={"story"} className="container">
-        <img className="title" src={title} alt="" />
-      </section>
+      </Section>
+
+      <Section id={"gift"}>
+        <div>
+          <FontAwesomeIcon
+            icon={faGift}
+            className={"gift-icon"}
+            size={"10x"}
+            color={"var(--clr-secondary)"}
+          />
+          <h2 className={"gift-title"}>
+            SEND US SOME <span>LOVE</span>
+          </h2>
+          <h3 className={"gift-subtitle"}>Untuk kedua pengantin</h3>
+        </div>
+        <p className={"gift-content"}>
+          Bagi Bapak/Ibu/Saudara/i yang ingin mengirimkan hadiah pernikahan
+          dapat melalui:
+        </p>
+
+        <img
+          className={"qris-item"}
+          src="src/assets/images/temp/dummy-qris.png"
+          alt="qris belum tersedia"
+        />
+
+        <p className={"gift-content"}>atau dikirim ke alamat</p>
+        <h4 className={"gift-address"}>
+          Jl. Baharuddin Yusuf, Tembilahan Kota, Kec. Tembilahan, Kabupaten
+          Indragiri Hilir, Riau 29214
+        </h4>
+      </Section>
+
+      <Section id={"closing"} className={"justify-end"}>
+        <div style={{ justifySelf: "flex-end" }}>
+          <h3 className={"closing-text1"}>TERIMA KASIH</h3>
+          <h2 className={"closing-text2"}>Kami yang Berbahagia</h2>
+          <h3 className={"closing-text3"}>KEDUA MEMPELAI & KELUARGA BESAR</h3>
+        </div>
+      </Section>
     </>
   );
 };

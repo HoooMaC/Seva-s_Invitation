@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
     --clr-primary: #fce0df;
     --clr-secondary: #d6a09e;
@@ -37,6 +41,8 @@
 
     --icon-sz: 24px;
 
+    --container-width: clamp(200px, 100%, 360px);
+
     --navbar-height: calc(var(--icon-sz) + (var(--pad-base) * 4));
 }
 
@@ -70,7 +76,7 @@ button {
 
 @font-face {
     font-family: "Century725 Cn BT";
-    src: url("../fonts/cen725c.ttf") format("truetype");
+    src: url("assets/fonts/cen725c.ttf") format("truetype");
 }
 
 h1,

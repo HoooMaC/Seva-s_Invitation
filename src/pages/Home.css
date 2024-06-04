@@ -44,8 +44,11 @@
     --image-width: calc((100% - (var(--each-image-gap) * var(--image-column))) / var(--image-column));
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     gap: var(--each-image-gap);
+    margin-top: 24px;
 }
 
 
@@ -56,4 +59,113 @@
     border-radius: 8px;
     height: fit-content; /* heightnya disini nanti tergantung image*!*/
     object-fit: cover;
+}
+
+.gift-icon {
+    position: relative;
+    margin: 0 auto 16px;
+    display: block;
+    filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.1));
+}
+
+.gift-title {
+    color: var(--clr-secondary, #D6A09E);
+    text-align: center;
+    leading-trim: both;
+
+    text-edge: cap;
+    font-family: Inter;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    text-transform: uppercase;
+}
+
+.gift-title > span {
+    color: var(--clr-secondary, #D6A09E);
+    leading-trim: both;
+    text-edge: cap;
+    font-family: Inter;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+    text-transform: uppercase;
+}
+
+.gift-subtitle {
+    color: var(--clr-secondary, #D6A09E);
+    leading-trim: both;
+    text-align: center;
+    text-edge: cap;
+    font-family: Inter;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.gift-content {
+    color: #696969;
+    text-align: center;
+    leading-trim: both;
+    text-edge: cap;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.qris-item {
+    padding: 16px 36px;
+}
+
+.gift-address {
+    color: var(--clr-secondary, #D6A09E);
+    text-align: center;
+    leading-trim: both;
+    text-edge: cap;
+    font-family: var(--Font-Name-Paragraph, Inter);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+#closing {
+    padding-bottom: 48px;
+}
+
+.closing-text1 {
+    color: var(--clr-secondary, #D6A09E);
+    text-align: center;
+    font-family: var(--Font-Name-Heading, "Century725 Cn BT");
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.closing-text2 {
+    color: var(--clr-secondary, #D6A09E);
+    text-align: center;
+    leading-trim: both;
+    text-edge: cap;
+    font-family: var(--Font-Name-Hero, "Luxurious Script");
+    font-size: 52px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.closing-text3 {
+    color: var(--clr-secondary, #D6A09E);
+    text-align: center;
+    font-family: var(--Font-Name-Heading, "Century725 Cn BT");
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
 }

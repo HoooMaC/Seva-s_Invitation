@@ -12,6 +12,7 @@ import CoupleRing from "../assets/icons/couple_ring.svg";
 import { useState } from "react";
 import "./Date.css";
 import Background from "../Background.jsx";
+import { FullpageSection } from "../components/section.jsx";
 
 const Date = () => {
   const [akadPage, setAkadPage] = useState(false);
@@ -20,7 +21,6 @@ const Date = () => {
     mid: {
       opacity: 1,
       x: 0,
-      scale: 0.9,
     },
   };
   return (
@@ -75,102 +75,87 @@ const Date = () => {
           A
         </motion.h1>
       </Background>
-      <div className="container">
-        <div
-          className="col-container"
-          style={{ justifyContent: "space-between" }}
-        >
-          <TopNavbar>
-            <div className="date-option">
-              <Button
-                onClick={() => setAkadPage(true)}
-                className={`top-navbar-button ${akadPage ? "active" : ""}`}
-              >
-                <HeartIcon />
-              </Button>
-              <Button
-                onClick={() => setAkadPage(false)}
-                className={`top-navbar-button ${!akadPage ? "active" : ""}`}
-              >
-                <HeartIcon />
-              </Button>
-            </div>
-          </TopNavbar>
-
-          <AnimatePresence mode="wait">
-            {akadPage && (
-              <motion.div
-                className="date-location-wrapper"
-                key="first"
-                variants={divVariant}
-                initial={{
-                  opacity: 0,
-                  x: 50,
-                  scale: 0.8,
-                }}
-                animate="mid"
-                exit={{
-                  opacity: 0,
-                  x: 50,
-                  scale: 0.8,
-                }}
-                transition={{
-                  duration: 0.3,
-                  ease: "easeInOut",
-                }}
-              >
-                <DateBox
-                  event="Akad Nikah"
-                  icon={CoupleRing}
-                  date="01 Januari 2023"
-                />
-                <LocationBox
-                  place="Gedung Puri Cendana"
-                  address="Jl. Baharuddin Yusuf, Tembilahan Kota, Kec. Tembilahan, Kabupaten Indragiri Hilir, Riau 29214"
-                />
-              </motion.div>
-            )}
-
-            {!akadPage && (
-              <motion.div
-                className="date-location-wrapper"
-                key="second"
-                variants={divVariant}
-                initial={{
-                  opacity: 0,
-                  x: -50,
-                  scale: 0.8,
-                }}
-                animate="mid"
-                exit={{
-                  opacity: 0,
-                  x: -50,
-                  scale: 0.8,
-                }}
-                transition={{
-                  duration: 0.3,
-                  ease: "easeInOut",
-                }}
-              >
-                <DateBox
-                  event="Resepsi"
-                  icon={CoupleRing}
-                  date="01 Januari 2023"
-                />
-                <LocationBox
-                  place="Gedung Puri Cendana"
-                  address="Jl. Baharuddin Yusuf, Tembilahan Kota, Kec. Tembilahan, Kabupaten Indragiri Hilir, Riau 29214"
-                />
-              </motion.div>
-            )}
-          </AnimatePresence>
-
-          <div
-            className="dummy-box"
-            style={{ width: "100%", height: "40px" }}
-          ></div>
+      <TopNavbar>
+        <div className="date-option">
+          <Button
+            onClick={() => setAkadPage(true)}
+            className={`top-navbar-button ${akadPage ? "active" : ""}`}
+          >
+            <HeartIcon />
+          </Button>
+          <Button
+            onClick={() => setAkadPage(false)}
+            className={`top-navbar-button ${!akadPage ? "active" : ""}`}
+          >
+            <HeartIcon />
+          </Button>
         </div>
-      </div>
+      </TopNavbar>
+      <FullpageSection>
+        <AnimatePresence mode="wait">
+          {akadPage && (
+            <motion.div
+              className="date-location-wrapper"
+              key="first"
+              variants={divVariant}
+              initial={{
+                opacity: 0,
+                x: 50,
+              }}
+              animate="mid"
+              exit={{
+                opacity: 0,
+                x: 50,
+              }}
+              transition={{
+                duration: 0.3,
+                ease: "easeInOut",
+              }}
+            >
+              <DateBox
+                event="Akad Nikah"
+                icon={CoupleRing}
+                date="01 Januari 2023"
+              />
+              <LocationBox
+                place="Gedung Puri Cendana"
+                address="Jl. Baharuddin Yusuf, Tembilahan Kota, Kec. Tembilahan, Kabupaten Indragiri Hilir, Riau 29214"
+              />
+            </motion.div>
+          )}
+
+          {!akadPage && (
+            <motion.div
+              className="date-location-wrapper"
+              key="second"
+              variants={divVariant}
+              initial={{
+                opacity: 0,
+                x: -50,
+              }}
+              animate="mid"
+              exit={{
+                opacity: 0,
+                x: -50,
+              }}
+              transition={{
+                duration: 0.3,
+                ease: "easeInOut",
+              }}
+            >
+              <DateBox
+                event="Resepsi"
+                icon={CoupleRing}
+                date="01 Januari 2023"
+              />
+              <LocationBox
+                place="Gedung Puri Cendana"
+                address="Jl. Baharuddin Yusuf, Tembilahan Kota, Kec. Tembilahan, Kabupaten Indragiri Hilir, Riau 29214"
+              />
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </FullpageSection>
     </>
   );
 };

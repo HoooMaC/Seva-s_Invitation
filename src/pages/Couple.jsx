@@ -1,13 +1,9 @@
 import { useState } from "react";
 import TopNavbar from "../components/TopNavbar";
 import Button from "../components/Button";
-import { HeartIcon } from "../components/Icons";
 
 import brideImage from "../assets/images/couple/temp_bride.png";
-import brideTitle from "../assets/images/couple/bride_name.png";
-
 import groomImage from "../assets/images/couple/temp_groom.png";
-import groomTitle from "../assets/images/couple/groom_name.png";
 
 import "./Couple.css";
 import Background from "../Background.jsx";
@@ -24,79 +20,69 @@ import {
   GroomFirstName,
 } from "../svgs/CoupleNames.jsx";
 
-const CoupleTitle = src => {
-  return (
-    <>
-      {/*  First Name*/}
-
-      {/*  Second Name*/}
-    </>
-  );
-};
-
 const Couple = () => {
   const [isGroom, setIsGroom] = useState(false);
 
   return (
     <>
-      {/*<Background>*/}
-      {/*  <FontAwesomeIcon*/}
-      {/*    className="couple-bg-icon v1 heart1"*/}
-      {/*    icon={faHeart}*/}
-      {/*    size="8x"*/}
-      {/*    fade*/}
-      {/*  />*/}
-      {/*  <FontAwesomeIcon*/}
-      {/*    className="couple-bg-icon v2 heart2"*/}
-      {/*    icon={faHeart}*/}
-      {/*    size="10x"*/}
-      {/*    fade*/}
-      {/*  />*/}
-      {/*  <FontAwesomeIcon*/}
-      {/*    className="couple-bg-icon v1 heart3"*/}
-      {/*    icon={faHeart}*/}
-      {/*    size="4x"*/}
-      {/*    fade*/}
-      {/*  />*/}
-      {/*  <FontAwesomeIcon*/}
-      {/*    className="couple-bg-icon v2 heart4"*/}
-      {/*    icon={faHeart}*/}
-      {/*    size="4x"*/}
-      {/*    fade*/}
-      {/*  />*/}
-      {/*</Background>*/}
+      <Background>
+        <FontAwesomeIcon
+          className="couple-bg-icon v1 heart1"
+          icon={faHeart}
+          size="8x"
+          fade
+        />
+        <FontAwesomeIcon
+          className="couple-bg-icon v2 heart2"
+          icon={faHeart}
+          size="10x"
+          fade
+        />
+        <FontAwesomeIcon
+          className="couple-bg-icon v1 heart3"
+          icon={faHeart}
+          size="4x"
+          fade
+        />
+        <FontAwesomeIcon
+          className="couple-bg-icon v2 heart4"
+          icon={faHeart}
+          size="4x"
+          fade
+        />
+      </Background>
+
+      <TopNavbar>
+        <div className="date-option">
+          <Button
+            // to="/date/akad"
+            onClick={() => setIsGroom(true)}
+            className={`top-navbar-button ${isGroom ? "active" : ""}`}
+          >
+            <FontAwesomeIcon
+              className="transition"
+              icon={faPerson}
+              size={isGroom ? "2x" : "xl"}
+            />
+          </Button>
+          <Button
+            // to="/date/resepsi"
+            onClick={() => setIsGroom(false)}
+            className={`top-navbar-button ${!isGroom ? "active" : ""}`}
+          >
+            <FontAwesomeIcon
+              icon={faPersonDress}
+              size={!isGroom ? "2x" : "xl"}
+            />
+          </Button>
+        </div>
+      </TopNavbar>
 
       <div className="container">
         <div
           className="col-container"
           style={{ justifyContent: "space-between", minHeight: "100dvh" }}
         >
-          <TopNavbar>
-            <div className="date-option">
-              <Button
-                // to="/date/akad"
-                onClick={() => setIsGroom(true)}
-                className={`top-navbar-button ${isGroom ? "active" : ""}`}
-              >
-                <FontAwesomeIcon
-                  className="transition"
-                  icon={faPerson}
-                  size={isGroom ? "2x" : "xl"}
-                />
-              </Button>
-              <Button
-                // to="/date/resepsi"
-                onClick={() => setIsGroom(false)}
-                className={`top-navbar-button ${!isGroom ? "active" : ""}`}
-              >
-                <FontAwesomeIcon
-                  icon={faPersonDress}
-                  size={!isGroom ? "2x" : "xl"}
-                />
-              </Button>
-            </div>
-          </TopNavbar>
-
           {isGroom ? (
             <>
               <img
@@ -119,7 +105,6 @@ const Couple = () => {
                 alt=""
                 key="the-bride-image"
               />
-              {/*<CoupleTitle src={brideSvg}></CoupleTitle>*/}
               <BrideFirstName
                 width={"320px"}
                 height={"120px"}

@@ -1,6 +1,6 @@
 import { RouterProvider } from "react-router-dom";
 import router from "./router.jsx";
-import { AnimatePresence } from "framer-motion";
+import "./index.css";
 
 function App() {
   return <RouterProvider router={router} />;

@@ -119,13 +119,10 @@ const Family = () => {
           className="circle-effect"
         />
       </Background>
+      <TopNavbar />
       <div className="container">
         <div className="col-container">
-          <TopNavbar className="fixed-top"></TopNavbar>
-
-          <div className="board-title-container">
-            <h1 className="board-title">KELUARGA</h1>
-          </div>
+          <h1 className="board-title">KELUARGA</h1>
 
           <div className="family-section">
             <div className="carousel-navigator-container">

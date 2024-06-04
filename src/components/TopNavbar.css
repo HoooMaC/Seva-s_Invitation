@@ -1,7 +1,11 @@
 .top-navbar {
     display: flex;
     justify-content: space-between;
-    position: relative;
+    position: fixed;
+    width: var(--container-width);
+    top: 16px;
+    left: 50%;
+    transform: translateX(-50%);
     z-index: 8;
 }
 
