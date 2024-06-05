@@ -37,9 +37,9 @@
 }
 
 .fullpage-section {
-    min-height: 100dvh;
-    overflow: hidden;
-    padding: 100px 16px;
+    min-height: 100svh;
+    max-height: 100dvh;
+    padding: 72px 0 100px;
     width: var(--container-width);
     position: relative;
     margin: 0 auto;

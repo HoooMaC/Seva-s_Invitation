@@ -14,6 +14,7 @@ import families from "../constants/familes.js";
 
 import "./Family.css";
 import Background from "../Background.jsx";
+import { FullpageSection } from "../components/section.jsx";
 
 const CarouselCard = ({ id, title, subtitle, image, animationDirection }) => {
   return (
@@ -120,32 +121,29 @@ const Family = () => {
         />
       </Background>
       <TopNavbar />
-      <div className="container">
-        <div className="col-container">
-          <h1 className="board-title">KELUARGA</h1>
-
-          <div className="family-section">
-            <div className="carousel-navigator-container">
-              <Button className="circle-button" onClick={handlePrev}>
-                <FontAwesomeIcon icon={faChevronLeft} />
-              </Button>
-              <Button className="circle-button" onClick={handleNext}>
-                <FontAwesomeIcon icon={faChevronRight} />
-              </Button>
-            </div>
-            <AnimatePresence initial={false} mode={"wait"}>
-              <CarouselCard
-                key={families[sliderState.currentIndex].id}
-                id={families[sliderState.currentIndex].id}
-                title={families[sliderState.currentIndex].title}
-                subtitle={families[sliderState.currentIndex].subtitle}
-                image={families[sliderState.currentIndex].image}
-                animationDirection={sliderState.direction}
-              />
-            </AnimatePresence>
+      <FullpageSection>
+        <h1 className="board-title">KELUARGA</h1>
+        <div className="family-section">
+          <div className="carousel-navigator-container">
+            <Button className="circle-button" onClick={handlePrev}>
+              <FontAwesomeIcon icon={faChevronLeft} />
+            </Button>
+            <Button className="circle-button" onClick={handleNext}>
+              <FontAwesomeIcon icon={faChevronRight} />
+            </Button>
           </div>
+          <AnimatePresence initial={false} mode={"wait"}>
+            <CarouselCard
+              key={families[sliderState.currentIndex].id}
+              id={families[sliderState.currentIndex].id}
+              title={families[sliderState.currentIndex].title}
+              subtitle={families[sliderState.currentIndex].subtitle}
+              image={families[sliderState.currentIndex].image}
+              animationDirection={sliderState.direction}
+            />
+          </AnimatePresence>
         </div>
-      </div>
+      </FullpageSection>
     </>
   );
 };

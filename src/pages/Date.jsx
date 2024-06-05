@@ -91,7 +91,7 @@ const Date = () => {
           </Button>
         </div>
       </TopNavbar>
-      <FullpageSection>
+      <FullpageSection className={"flex"}>
         <AnimatePresence mode="wait">
           {akadPage && (
             <motion.div
