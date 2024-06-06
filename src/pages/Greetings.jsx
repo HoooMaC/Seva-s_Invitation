@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useState, useRef, useEffect } from "react";
 import BeatLoader from "react-spinners/BeatLoader";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion, stagger, useAnimate } from "framer-motion";
 
 import { PlusIcon } from "../components/Icons";
 import Button from "../components/Button";
@@ -14,19 +14,46 @@ import { faTriangleExclamation } from "@fortawesome/free-solid-svg-icons";
 import Background from "../Background.jsx";
 import { FullpageSection } from "../components/section.jsx";
 
+const container = {
+  hidden: { opacity: 1 },
+  visible: {
+    opacity: 1,
+    transition: {
+      delay: 0.3,
+      when: "beforeChildren",
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+const item = {
+  hidden: { y: 20, opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1,
+  },
+};
+
 const Greetings = () => {
   const BASE_URL = import.meta.env.VITE_API_BASE_URL;
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(false);
 
+  function getData() {
+    if (data.data && Array.isArray(data.data)) return data.data;
+    else if (data && Array.isArray(data)) return data;
+    console.log("something went wrong");
+    return null;
+  }
+
   // TODO Change with react query
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await axios.get(`${BASE_URL}/api/greetings`);
-        setData(response.data);
         console.log(response.data);
+        setData(response.data);
       } catch (error) {
         setError(true);
         console.error("Error fetching data:", error);
@@ -37,38 +64,6 @@ const Greetings = () => {
     fetchData();
   }, []);
 
-  const RenderData = () => {
-    // Periksa apakah data.data.map valid
-    if (data.data && Array.isArray(data.data)) {
-      return data.data.map(({ id, attributes }, index) => (
-        <GreetingCard
-          key={id}
-          name={attributes.name}
-          relation={attributes.relation}
-          icon={attributes.icon}
-        >
-          {attributes.message}
-        </GreetingCard>
-      ));
-    }
-
-    // Periksa apakah data.map valid
-    if (data && Array.isArray(data)) {
-      return data.map(({ id, attributes }, index) => (
-        <GreetingCard
-          key={id}
-          name={attributes.name}
-          relation={attributes.relation}
-          icon={attributes.icon}
-        >
-          {attributes.message}
-        </GreetingCard>
-      ));
-    }
-
-    // Jika kedua properti tidak valid, kembalikan null atau tampilkan pesan kesalahan
-    return null;
-  };
   return (
     <>
       <Background>
@@ -130,22 +125,45 @@ const Greetings = () => {
               data-testid="loader"
             />
           </motion.div>
-        ) : (
-          <>
-            <div className="greetings-container">
-              <div className="scrollable-container">
-                <RenderData />
-              </div>
-            </div>
-            {/* Need to check if the user hasn't write any greeting letter yet */}
-            <Button
-              className="circle-button new-greeting-button"
-              to="/new-greeting"
-            >
-              <PlusIcon />
-            </Button>
-          </>
-        )}
+        ) : null}
+
+        <div className="greetings-container">
+          {!isLoading && (
+            <>
+              <motion.div
+                variants={container}
+                initial={"hidden"}
+                animate={"visible"}
+                className="scrollable-container"
+              >
+                {getData().map(({ attributes }, index) => {
+                  return (
+                    <motion.div
+                      key={index}
+                      variants={item}
+                      className="greeting-card"
+                    >
+                      <GreetingCard
+                        icon={attributes.icon}
+                        name={attributes.name}
+                        relation={attributes.relation}
+                      >
+                        {attributes.message}
+                      </GreetingCard>
+                    </motion.div>
+                  );
+                })}
+              </motion.div>
+            </>
+          )}
+        </div>
+        {/* Need to check if the user hasn't write any greeting letter yet */}
+        <Button
+          className="circle-button new-greeting-button"
+          to="/new-greeting"
+        >
+          <PlusIcon />
+        </Button>
       </FullpageSection>
     </>
   );

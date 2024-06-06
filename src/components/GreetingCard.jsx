@@ -2,10 +2,10 @@ import "./GreetingCard.css";
 
 const GreetingCard = ({ name, relation, icon, children }) => {
   return (
-    <div className="greeting-card">
+    <>
       <div className="greeting-card-section header">
         <div className="greeting-card-profile">
-          {/* Profile image if exist */}
+          {/*Profile image if exist*/}
           {icon && (
             <img className="greeting-card-writter-icon" src={icon} alt={name} />
           )}
@@ -22,7 +22,7 @@ const GreetingCard = ({ name, relation, icon, children }) => {
         <div className="line-decoration top"></div>
         <div className="line-decoration bottom"></div>
       </div>
-    </div>
+    </>
   );
 };
 
