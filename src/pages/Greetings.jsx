@@ -12,6 +12,7 @@ import "./Greetings.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTriangleExclamation } from "@fortawesome/free-solid-svg-icons";
 import Background from "../Background.jsx";
+import { FullpageSection } from "../components/section.jsx";
 
 const Greetings = () => {
   const BASE_URL = import.meta.env.VITE_API_BASE_URL;
@@ -96,52 +97,56 @@ const Greetings = () => {
       </Background>
       <TopNavbar />
 
-      <div className="container">
-        <div className="col-container">
-          <h1 className="board-title">PAPAN PESAN</h1>
-          {error ? (
-            <div className="error-box">
-              <FontAwesomeIcon
-                icon={faTriangleExclamation}
-                color="#ff224a"
-                size="6x"
-              />
-              <h3 className="error-header">Something went wrong</h3>
-              <p>Please try again later</p>
-            </div>
-          ) : isLoading ? (
-            <motion.div
-              className="loading-box"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-            >
-              <BeatLoader
-                color="#D6A09E"
-                loading={isLoading}
-                // cssOverride={override}
-                size={20}
-                aria-label="Loading Spinner"
-                data-testid="loader"
-              />
-            </motion.div>
-          ) : (
-            <div className="section">
+      <FullpageSection id={"greetings"} className={"max-100"}>
+        <h1
+          className="board-title"
+          style={{ position: "fixed", width: "var(--container-width)" }}
+        >
+          PAPAN PESAN
+        </h1>
+        {error ? (
+          <div className="error-box">
+            <FontAwesomeIcon
+              icon={faTriangleExclamation}
+              color="#ff224a"
+              size="6x"
+            />
+            <h3 className="error-header">Something went wrong</h3>
+            <p>Please try again later</p>
+          </div>
+        ) : isLoading ? (
+          <motion.div
+            className="loading-box"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+          >
+            <BeatLoader
+              color="#D6A09E"
+              loading={isLoading}
+              // cssOverride={override}
+              size={20}
+              aria-label="Loading Spinner"
+              data-testid="loader"
+            />
+          </motion.div>
+        ) : (
+          <>
+            <div className="greetings-container">
               <div className="scrollable-container">
                 <RenderData />
-                <div style={{ width: "100%", minHeight: "10vh" }}></div>
               </div>
-              {/* Need to check if the user hasn't write any greeting letter yet */}
-              <Button
-                className="circle-button new-greeting-button"
-                to="/new-greeting"
-              >
-                <PlusIcon />
-              </Button>
             </div>
-          )}
-        </div>
-      </div>
+            {/* Need to check if the user hasn't write any greeting letter yet */}
+            <Button
+              className="circle-button new-greeting-button"
+              to="/new-greeting"
+            >
+              <PlusIcon />
+            </Button>
+          </>
+        )}
+      </FullpageSection>
     </>
   );
 };

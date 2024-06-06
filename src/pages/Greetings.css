@@ -46,16 +46,26 @@
     line-height: normal;
 }
 
-.section > .scrollable-container {
-    margin-top: -8px;
-    padding-top: 56px;
-    padding-bottom: 100px;
+.greetings-container {
+    display: flex;
+    flex-direction: column;
+    padding-top: 10px;
+    max-height: calc(100dvh - 72px - 10px);
+}
+
+.scrollable-container {
+    overflow-y: auto;
+    padding: 64px 0 100px;
 }
 
 .new-greeting-button {
     position: fixed;
     bottom: clamp(30px, 50px, 80px);
-    align-self: flex-end;
-    transform: translateY(-100%);
+    right: 0;
+    transform: translate(-50%, -100%);
     /* transform: ; */
+}
+
+.max-100 {
+    max-height: 100dvh;
 }
